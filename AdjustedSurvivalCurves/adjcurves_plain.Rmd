@@ -1,0 +1,186 @@
+---
+title: "Adjusted survival curves"
+author: André Moser, CTU Bern, University of Bern
+output: github_document
+bibliography: adjcurves_plain.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Background
+
+Unadjusted Kaplan-Meier curves from observational data might be biased because of confounding (@COLE200445). This vignette introduces the concept of inverse probability (IP) weighted survival curves.
+
+# Example
+
+We consider a study population of 10,000 patients who received a medication. 60% of the patients were women. In men, a specific enzym was measured with a probability of 30%, whereas in women have a 5 times higher chance of having the enzym. Those with the enzym were more likely to receive the medication (with a probability of 75%), compared to those without the enyzm (probability of 50%).
+
+- Research question: What is the effect of the medication on death?
+- Study design: Cohort study
+- Outcome of interest: Time to death or end of follow-up
+- Predictor of interest: Medication
+- Confounders: Sex, enzym
+
+The used variables from the data are:
+
+| Variable | Definition | Coding |
+| --- | --- | --- |
+| female | Sex | 1=Women, 0=Men |
+| enzym | Measured enzym | 1=Present, 0=Not present |
+| medi | Medication | 1=Received, 0=Not received |
+| death | Death | 1=Death, 0=Alive |
+| fup | Follow-up time | Non-negative number |
+
+## Knowledge from the crystal ball
+
+Because we simulated the data, we know that medication has no effect on mortality.
+
+# Analysis strategy
+
+IP weighting constructs weights which are equal to the probability of an individual's treatment (here: receiving the medication) given observed covariates (here: sex and enzym) and creates pseudopopulations in which observed covariates are independent of treatment (i.e. no confounding) (@hernan_book).
+
+```{r, echo=T, message=F, warning=F}
+# Required packages
+library(tidyverse)
+library(survey)
+library(survival)
+library(gtsummary)
+library(survminer)
+```
+
+```{r, echo=F, message=F, warning=F, results='asis'}
+set.seed(1)
+n <- 10000
+
+# 60% percent women
+female <- rbinom(n, 1, 0.6)
+# Men has the enzym with a prob of 0.3; women have
+# a 5 times higher chance of having the enzym
+enzym <- ifelse(runif(n) < plogis(qlogis(0.3)+log(5)*female), 1, 0)
+# Those with enzym receive medication with prob 0.75
+medi <- ifelse(runif(n) < plogis(log(3)*enzym), 1, 0)
+# Hazard of dying: HR=10 of those with enyzm; No effect for medication
+haz <- 0.01*exp(log(10)*enzym)
+# Time to death
+time_to_death <- -log(runif(n))/haz
+# Censoring time: Mean duration 20 days
+censored <- rweibull(n, 1, 20)
+# Follow-up time
+fup <- pmin(time_to_death, censored)
+# Death
+death <- ifelse(time_to_death<=censored, 1, 0)
+# Data
+data <- data.frame(fup, death, medi, enzym, female)
+```
+
+## Descriptive table
+
+The table below shows a descriptive summary of the study population, by medication.
+
+```{r, echo=T, message=F, warning=F}
+data %>% tbl_summary(by=medi, label=list(medi ~ "Medication")) %>% as_kable() 
+```
+
+## Unadjusted Kaplan-Meier curve and Cox-modelling
+
+A naive (unadjusted) survival analysis of the data reveals the following Kaplan-Meier plot. We conclude that the medication has an effect on survival.
+
+```{r, echo=T, message=F, warning=F}
+mod <- survfit(Surv(fup, death)~medi, data=data)
+ggsurvplot(mod, data=data, palette=c("#CC0000", "black"), censor=F)
+```
+
+```{r, echo=T, message=F, warning=F}
+mod_cox_unadjusted <- coxph(Surv(fup, death) ~ medi, data = data)
+mod_cox_unadjusted
+```
+
+An unadjusted Cox proportional hazard model shows that patients with medication have `r round(exp(mod_cox_unadjusted$coef[1]), 1)` higher hazard of death compared to those without medication.
+
+```{r, echo=T, message=F, warning=F}
+mod_cox_adjusted <- coxph(Surv(fup, death) ~ medi+enzym+female, data = data)
+mod_cox_adjusted
+```
+
+What happens if we adjust for enzym and sex? Then the effect of the medication on death vanish (hazard ratio=`r round(exp(mod_cox_adjusted$coef[1]), 2)`).
+
+## IPW modelling
+
+An IPW modelling approach construct treatment weights (here medication) given known covariates (here sex and enzym) using a logistic regression model.
+
+```{r, echo=T, message=F, warning=F, results='markup'}
+# IPW denominator
+mod <- glm(medi ~ female+enzym, data=data, family=binomial())
+
+data$ipw <- NA
+# Probabilty of treatment
+data$ipw <- predict(mod, data=data, type="response")
+# Probabilty of non-treatment
+data$ipw[data$medi==0] <- 1-predict(mod, data=data, type="response")[data$medi==0]
+```
+
+We construct stabilized weights, since they can provide narrower confidence intervals (@hernan_book).
+
+```{r, echo=T, message=F, warning=F, results='markup'}
+# Stabilized weights
+mod0 <- glm(medi ~ 1, data=data, family=binomial())
+data$ipw0 <- predict(mod0, data=data, type="response")
+data$ipw0[data$medi==0] <- 1-predict(mod0, data=data, type="response")[data$medi==0]
+data$ipw <- data$ipw0/data$ipw
+```
+
+An IPW adjusted Kaplan-Meier curve reveals that medication has no effect on survival:
+
+```{r, echo=T, message=F, warning=F, results='markup'}
+# Set survey design
+svy_design <- svydesign(id=~1, weights=~ipw, data=data)
+
+# IPW adjusted Kaplan-Meier
+km_fit <- svykm(Surv(fup, death) ~ medi, design=svy_design)
+
+km_df <- data.frame(time=km_fit$`1`$time, surv=km_fit$`1`$surv, strata="medi=1")
+km_df <- bind_rows(km_df, data.frame(time=km_fit$`0`$time, surv=km_fit$`0`$surv, strata="medi=0"))
+ggsurvplot_df(km_df, palette=c("#CC0000", "black"), censor=F)
+```
+
+
+```{r, echo=T, message=F, warning=F, results='markup'}
+mod_cox_ipw_adjusted <- svycoxph(Surv(fup, death) ~ medi, design=svy_design)
+summary(mod_cox_ipw_adjusted)
+```
+
+This is confirmed by an IPW adjusted Cox regression model (hazard ratio=`r round(exp(mod_cox_ipw_adjusted$coef[1]), 2)`).
+
+# Conclusion
+
+Unadjusted Kaplan-Meier curves from observational data might be biased because of confounding. IPW adjusted survival curves account for confounding by constructing weights which are proportional to the probability of treatment given known covariates. An advantage of IPW adjusted Kaplan-Meier curves is that they provide marginal survival estimates, in contrast to stratified plots (@COLE200445).
+
+# Data simulation
+
+```{r, echo=T, message=F, warning=F, results='asis'}
+set.seed(1)
+n <- 10000
+
+# 60% percent women
+female <- rbinom(n, 1, 0.6)
+# Men has the enzym with a prob of 0.3; women have
+# a 5 times higher chance of having the enzym
+enzym <- ifelse(runif(n) < plogis(qlogis(0.3)+log(5)*female), 1, 0)
+# Those with enzym receive medication with prob 0.75
+medi <- ifelse(runif(n) < plogis(log(3)*enzym), 1, 0)
+# Hazard of dying: HR=10 of those with enyzm; No effect for medication
+haz <- 0.01*exp(log(10)*enzym)
+# Time to death
+time_to_death <- -log(runif(n))/haz
+# Censoring time: Mean duration 20 days
+censored <- rweibull(n, 1, 20)
+# Follow-up time
+fup <- pmin(time_to_death, censored)
+# Death
+death <- ifelse(time_to_death<=censored, 1, 0)
+# Data
+data <- data.frame(fup, death, medi, enzym, female)
+```
+
