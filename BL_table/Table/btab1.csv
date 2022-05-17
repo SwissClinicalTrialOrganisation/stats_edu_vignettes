@@ -1,0 +1,11 @@
+,Total (N = 74),Domestic (N = 52),Foreign (N = 22),Mean difference or risk difference (95% CI),P-value,Descriptives,Effects,Tests
+,mean (sd) or n (%),mean (sd) or n (%),mean (sd) or n (%),,,,,
+Price,6165 (2949),6072 (3097),6385 (2622),-312 (-1816 - 1192),0.68,mean (sd),mean difference (95% CI),Student's t-test
+Mileage (mpg),21 (5.8),20 (4.7),25 (6.6),-4.9 (-7.7 - -2.2),<0.001,mean (sd),mean difference (95% CI),Student's t-test
+Repair Record 1978,,,,,<0.001,,,Fisher's exact test
+    Poor,2 (2.9%),2 (4.2%),0 (0.00%),0.04 (-0.01 to 0.10),,n (%),risk difference (95% CI),
+    Fair,8 (12%),8 (17%),0 (0.00%),0.17 (0.06 to 0.27),,n (%),risk difference (95% CI),
+    Average,30 (43%),27 (56%),3 (14%),0.42 (0.21 to 0.62),,n (%),risk difference (95% CI),
+    Good,18 (26%),9 (19%),9 (43%),-0.24 (-0.48 to -0.00),,n (%),risk difference (95% CI),
+    Excellent,11 (16%),2 (4.2%),9 (43%),-0.39 (-0.61 to -0.17),,n (%),risk difference (95% CI),
+Headroom (in.),3.0 (0.85),3.2 (0.92),2.6 (0.49),0.54 (0.13 - 0.95),0.011,mean (sd),mean difference (95% CI),Student's t-test
