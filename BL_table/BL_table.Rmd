@@ -30,10 +30,10 @@ Baseline tables can be presented in different ways, but certain features are com
 
 Characteristics are generally presented on the left as rows and groupings at the top as columns.
 Groups are defined by treatment allocation for RCTs, disease status for case--control studies or cohorts.If appropriated, the overall population' characteristics may be presented in a separate column.
-Characteristics should include of study participants (e.g., demographic, clinical, social) and information on exposures and potential data confounders.
-Inside each cell, descriptive statistics are typically given as n (%) for categorical variables and mean (standard deviation) or median (25th-75th percentile or minimum-maximum) for continuous variables.The type of statistical measurement used should be indicated (e.g., together with the characteristic, in a footnote).The number of participants with missing data should be reported for each variable of interest.
+Characteristics should include information about study participants (e.g., demographic, clinical, social) and information on exposures and any particular characteristics that may be predictive for the studied outcome  (e.g.health status at baseline).
+Inside each cell, descriptive statistics are typically given as frequency and percentage for categorical variables and mean (standard deviation) or median (25th-75th percentile or minimum-maximum) for continuous variables.The type of statistical measurement used should be indicated (e.g., together with the characteristic, in a footnote).The number of participants with missing data should be reported for each variable of interest.
 
-**Important note: in RCT's, differences between randomized groups should not be tested for statistical significance**. Indeed, some imbalance is unavoidable owing to chance, especially if many characteristics are considered (@Palesch)
+**Important note: Baseline table are descriptive tables. significance tests and inferential measures (e.g. standard errors and confidence intervals) should be avoided in observational studies (@Vandenbroucke_strobe) as well as in RCTs (@MOHER201228)**. In RCTs, testing for differences between randomized groups is irrelevant because baseline differences are, by definition, caused by chance.
 
 
 ```{r gg-oz-gapminder, echo=FALSE, fig.cap="Figure 1: Basic baseline structure and analysis-specific considerations affecting columns, rows, and cells. Figure from (@HAYESLARSON2019125)", message=FALSE}
@@ -54,7 +54,7 @@ Indeed requirements for the contents and formatting of baseline table may vary d
 
 ### Data
 
-```{r eval=TRUE, include=TRUE}
+```{r r_data eval=TRUE, include=TRUE}
 library(dplyr)
 library(Hmisc)
 data(mtcars)
@@ -71,13 +71,13 @@ Hmisc::label(d$vs_f) <- "Engine"
 
 ### Using gtsummary
 
-```{r}
+```{r gt_summary_example1}
 #Make a table stratify the table by transmission
 library(gtsummary)
 table1=d %>%  tbl_summary(by = am_f)
 ```
 
-```{r table1a_fig, results="hide", include=FALSE}
+```{r gt_summary_example1_save table1a_fig, results="hide", include=FALSE}
 a=as_gt(table1)
 gt::gtsave(a, "Table/table1a.png")
 ```
@@ -90,9 +90,9 @@ This is the basic usage; defaults options may be customized.
 - Missing values are listed as "Unknown" in the table.
 - Variable levels are indented and footnotes are added.
 
-Once produced gtsummary tables can be converted your favorite format (e.g. html/pdf/word). For more information see [here](https://www.danieldsjoberg.com/gtsummary/articles/rmarkdown.html))
+Once produced gtsummary tables can be converted to your favorite format (e.g. html/pdf/word). For more information see [here](https://www.danieldsjoberg.com/gtsummary/articles/rmarkdown.html))
 
-```{r}
+```{r gt_summary_example2}
 # declare cylinders as a continuous variable, for this variable calculate the mean and sd value, add an overall column, change the missing text
 table1=d %>%
         tbl_summary(by = am_f, 
@@ -103,7 +103,7 @@ table1=d %>%
 
 ```
 
-```{r table1_fig, results="hide", include=FALSE}
+```{r gt_summary_example2_save, results="hide", include=FALSE}
 a=as_gt(table1)
 gt::gtsave(a, "Table/table1b.png")
 ```
@@ -114,9 +114,9 @@ gt::gtsave(a, "Table/table1b.png")
 
 
 
-If needed groups may be compare using statistical tests
+If needed groups may be compare using statistical tests. **WARNING: as stated above baseline tables are descriptive tables. Pvalues should be avoid**
 
-```{r}
+```{r gt_summary_example3}
 table1=d %>%
         tbl_summary(by = am_f, 
                     type = list(cyl ~ 'continuous'),
@@ -127,7 +127,7 @@ table1=d %>%
 
 ```
 
-```{r, results="hide", include=FALSE}
+```{r gt_summary_example3_save, results="hide", include=FALSE}
 a=as_gt(table1)
 gt::gtsave(a, "Table/table1c.png")
 ```
@@ -141,7 +141,7 @@ For more detailed tutorial and additional options see the very complete [vignett
 
 ### Using atable
 
-```{r results='hide'}
+```{r atable1 results='hide'}
 library(atable)
 table1=atable(d,
        target_cols = c("mpg" , "cyl" , "vs_f"),
@@ -152,13 +152,13 @@ table1=atable(d,
 
 or similar using the formula interface
 
-```{r results='hide'}
+```{r atable1b results='hide'}
 table1=atable(mpg+cyl+ vs_f ~ am_f, d,
               format_to="Word")
 table1
 ```
 
-```{r, results="hide", include=FALSE}
+```{r atable1_save, results="hide", include=FALSE}
 a=gt::gt(table1)
 gt::gtsave(a, "Table/table2.png")
 ```
@@ -168,13 +168,13 @@ The table may also be splitted in strata. For example we can decide to present s
 
 
 
-```{r results='hide'}
+```{r atable2 results='hide'}
 table1=atable(mpg+cyl  ~ am_f|vs_f , d,
               format_to="Word")
 table1
 ```
 
-```{r, results="hide", include=FALSE}
+```{r atable2_save, results="hide", include=FALSE}
 a=gt::gt(table1)
 gt::gtsave(a, "Table/table2a.png")
 ```
@@ -183,7 +183,7 @@ gt::gtsave(a, "Table/table2a.png")
 
 As gtsummary, atable may be exported in different format (e.g. LATEX, HTML, Word) and it is intended that some parts of atable can be altered by the user. Hence the type variable,descriptive statistics, used statistical tests may defined otherwise (for more details see @Strbel2019atableCT as well as the package [vignette](https://cran.r-project.org/web/packages/atable/vignettes/atable_usage.pdf).An other informative vignette can be found by typing the foloowing command in R:
 
-```{r eval=FALSE, include=TRUE}
+```{r atable_vignette eval=FALSE, include=TRUE}
 vignette("modifying", package = "atable")
 ```
 
@@ -195,7 +195,7 @@ Optionally, the table can be restricted to effect measures of choice and a numbe
 
 ## Instalation
 
-```{r eval=FALSE, include=TRUE}
+```{r btable_setup eval=FALSE, include=TRUE}
 #In order to install btable from github the github-package is required:
 net install github, from("https://haghish.github.io/github/")
 #You can then install the development version of btable with:
@@ -204,7 +204,7 @@ github install CTU-Bern/btable
 
 ## Example
 
-```{r eval=FALSE, include=TRUE}
+```{r btable1_code eval=FALSE, include=TRUE}
 # load example dataset
 sysuse auto2
 
@@ -216,7 +216,7 @@ btable_format using "excars", clear
 ```
 
 
-```{r include=FALSE}
+```{r btable1_results include=FALSE}
 dat <- readr::read_csv("Table/btab1.csv")
 dat[is.na(dat)] <- "" # replace NAs
 names(dat)[1] <- " "  # set missing var name
@@ -234,7 +234,7 @@ The formatting option can be modified. For example we can decide we may want to
 - present the median and lower and upper quartiles instead of the mean and standard deviation 
 - remove the overall column, the effect measure, and the information column
 
-```{r eval=FALSE, include=TRUE}
+```{r btable2_code eval=FALSE, include=TRUE}
 #If we want to display median [lq, up] for all the continuous variables
 btable_format using "excars", clear descriptive(conti median [lq, uq]) drop(total effect info)
 
@@ -242,7 +242,7 @@ btable_format using "excars", clear descriptive(conti median [lq, uq]) drop(tota
 btable_format using "excars", clear desc(conti median [lq, uq] mpg mean (sd)) drop(total effect info)
 ```
 
-```{r include=FALSE}
+```{r btable2_results include=FALSE}
 dat <- readr::read_csv("Table/btab2.csv")
 dat[is.na(dat)] <- "" # replace NAs
 names(dat)[1] <- " "  # set missing var name
