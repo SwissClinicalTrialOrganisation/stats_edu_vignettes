@@ -29,9 +29,9 @@ Providing a baseline table is one of the recommendations of the CONSORT (@MOHER2
 Baseline tables can be presented in different ways, but certain features are common and some recommendations need be followed. In the next paragraph and figure we provide an overview of the main important considerations, for more detailed review and guidelines see (e.g. @MOHER201228, @HAYESLARSON2019125).
 
 Characteristics are generally presented on the left as rows and groupings at the top as columns.
-Groups are defined by treatment allocation for RCTs, disease status for case--control studies or cohorts.If appropriated, the overall population' characteristics may be presented in a separate column.
-Characteristics should include information about study participants (e.g., demographic, clinical, social) and information on exposures and any particular characteristics that may be predictive for the studied outcome  (e.g.health status at baseline).
-Inside each cell, descriptive statistics are typically given as frequency and percentage for categorical variables and mean (standard deviation) or median (25th-75th percentile or minimum-maximum) for continuous variables.The type of statistical measurement used should be indicated (e.g., together with the characteristic, in a footnote).The number of participants with missing data should be reported for each variable of interest.
+Groups are defined by treatment allocation for RCTs, disease status for case--control studies or cohorts. If appropriated, the overall population's characteristics may be presented in a separate column.
+Characteristics should include information about the study participants (e.g., demographic, clinical, social) and information on exposures and any particular characteristics that may be predictive of the studied outcome (e.g.health status at baseline).
+Inside each cell, descriptive statistics are typically given as frequency and percentage for categorical variables and mean (standard deviation) or median (25th-75th percentile or minimum-maximum) for continuous variables. The type of statistical measurement used should be indicated (e.g., together with the characteristic, in a footnote). The number of participants with missing data should be reported for each variable of interest.
 
 **Important note: Baseline table are descriptive tables. significance tests and inferential measures (e.g. standard errors and confidence intervals) should be avoided in observational studies as well as in RCTs (see items 14a and 15a and of the STROBE and CONSORT statements, respectively, @Vandenbroucke_strobe @MOHER201228)**. In RCTs, testing for differences between randomized groups is irrelevant because baseline differences are, by definition, caused by chance.
 
@@ -48,7 +48,7 @@ include_graphics(img1_path)
 
 Many developers have published tools for building baselines tables.
 When choosing one please consider the flexibility of the tool.
-Indeed requirements for the contents and formatting of baseline table may vary depending on the project, the authors, the target journal... Here we present few (very flexible) options for R and stata.
+Indeed, requirements for the contents and formatting of baseline tables may vary depending on the project, the authors, the target journal, etc. Here we present few (very flexible) options for R and stata.
 
 ## In R
 
@@ -114,7 +114,7 @@ gt::gtsave(a, "Table/table1b.png")
 
 
 
-If needed groups may be compare using statistical tests. **WARNING: as stated above baseline tables are descriptive tables. Pvalues should be avoid**
+If needed, groups may be compared using statistical tests. **WARNING: as stated above baseline tables are descriptive tables. Pvalues should be avoid**
 
 ```{r gt_summary_example3}
 table1=d %>%
@@ -133,7 +133,7 @@ gt::gtsave(a, "Table/table1c.png")
 ```
 <img src='Table/table1c.png' align="center" width="90%">
 
-As before the function detects variable type and uses an appropriate statistical test. If needed defaults may be customized.
+As before, the function detects variable type and uses an appropriate statistical test. If needed defaults may be customized.
 
 #### Additional information
 
@@ -164,7 +164,7 @@ gt::gtsave(a, "Table/table2.png")
 ```
 <img src='Table/table2.png' align="center" width="80%">
 
-The table may also be splitted in strata. For example we can decide to present separately the characteristics of car with a "V" or a "Straight" engine. 
+The table may also be splitted in strata. For example, we can decide to present separately the characteristics of car with a "V" or a "Straight" engine. 
 
 
 
@@ -181,7 +181,7 @@ gt::gtsave(a, "Table/table2a.png")
 <img src='Table/table2a.png' align="center" width="80%">
 
 
-As gtsummary, atable may be exported in different format (e.g. LATEX, HTML, Word) and it is intended that some parts of atable can be altered by the user. Hence the type variable,descriptive statistics, used statistical tests may defined otherwise (for more details see @Strbel2019atableCT as well as the package [vignette](https://cran.r-project.org/web/packages/atable/vignettes/atable_usage.pdf).An other informative vignette can be found by typing the foloowing command in R:
+As gtsummary, atable may be exported in different formats (e.g. LATEX, HTML, Word) and it is intended that some parts of atable can be altered by the user. Hence the type variable,descriptive statistics, used statistical tests may defined otherwise (for more details see @Strbel2019atableCT as well as the package [vignette](https://cran.r-project.org/web/packages/atable/vignettes/atable_usage.pdf). An other informative vignette can be found by typing the foloowing command in R:
 
 ```{r atable_vignette eval=FALSE, include=TRUE}
 vignette("modifying", package = "atable")
@@ -189,7 +189,7 @@ vignette("modifying", package = "atable")
 
 # Stata: btable
 
-The table is constructed in a two-step approach using two functions: btable produces an unformatted, raw table, which is then formatted by btable_format to produce a final, publication-ready table.
+The table is constructed in a two-step approach using two functions: btable() produces an unformatted, raw table, which is then formatted by btable_format to produce a final, publication-ready table.
 By default, the raw table contains all summary measures, and---if there are two groups---effect measures and p-values.
 Optionally, the table can be restricted to effect measures of choice and a number of alternative calculations for confidence intervals are available.
 
