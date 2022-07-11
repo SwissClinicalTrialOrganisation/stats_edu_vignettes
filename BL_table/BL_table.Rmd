@@ -29,11 +29,11 @@ Providing a baseline table is one of the recommendations of the CONSORT (@MOHER2
 Baseline tables can be presented in different ways, but certain features are common and some recommendations need be followed. In the next paragraph and figure we provide an overview of the main important considerations, for more detailed review and guidelines see (e.g. @MOHER201228, @HAYESLARSON2019125).
 
 Characteristics are generally presented on the left as rows and groupings at the top as columns.
-Groups are defined by treatment allocation for RCTs, disease status for case--control studies or cohorts. If appropriated, the overall population's characteristics may be presented in a separate column.
-Characteristics should include information about the study participants (e.g., demographic, clinical, social) and information on exposures and any particular characteristics that may be predictive of the studied outcome (e.g.health status at baseline).
+In RCTs, groups are defined by treatment allocation. If appropriated, the overall population's characteristics may be presented in a separate column.
+Characteristics should include information about the study participants (e.g., demographic, clinical, social) and information on exposures and any particular characteristics that may be predictive of the studied outcome (e.g., health status at baseline).
 Inside each cell, descriptive statistics are typically given as frequency and percentage for categorical variables and mean (standard deviation) or median (25th-75th percentile or minimum-maximum) for continuous variables. The type of statistical measurement used should be indicated (e.g., together with the characteristic, in a footnote). The number of participants with missing data should be reported for each variable of interest.
 
-**Important note: Baseline table are descriptive tables. significance tests and inferential measures (e.g. standard errors and confidence intervals) should be avoided in observational studies as well as in RCTs (see items 14a and 15a and of the STROBE and CONSORT statements, respectively, @Vandenbroucke_strobe @MOHER201228)**. In RCTs, testing for differences between randomized groups is irrelevant because baseline differences are, by definition, caused by chance.
+**Important note: Baseline table are descriptive tables, significance tests and inferential measures (e.g. standard errors and confidence intervals) should be avoided in observational studies as well as in RCTs (see items 14a and 15a and of the STROBE and CONSORT statements, respectively, @Vandenbroucke_strobe @MOHER201228)**. In RCTs, testing for differences between randomized groups is irrelevant because baseline differences are, by definition, caused by chance.
 
 
 ```{r gg-oz-gapminder, echo=FALSE, fig.cap="Figure 1: Basic baseline structure and analysis-specific considerations affecting columns, rows, and cells. Figure from (@HAYESLARSON2019125)", message=FALSE}
@@ -54,7 +54,7 @@ Indeed, requirements for the contents and formatting of baseline tables may vary
 
 ### Data
 
-```{r r_data eval=TRUE, include=TRUE}
+```{r r_data, eval=TRUE, include=TRUE}
 library(dplyr)
 library(Hmisc)
 data(mtcars)
@@ -111,22 +111,6 @@ gt::gtsave(a, "Table/table1b.png")
 
 
 
-
-
-
-If needed, groups may be compared using statistical tests. **WARNING: as stated above baseline tables are descriptive tables. Pvalues should be avoid**
-
-```{r gt_summary_example3}
-table1=d %>%
-        tbl_summary(by = am_f, 
-                    type = list(cyl ~ 'continuous'),
-                    statistic = list(cyl ~ "{mean} ({sd})"),
-                    missing_text = "Missing") %>%
-        add_overall()%>%
-        add_p()
-
-```
-
 ```{r gt_summary_example3_save, results="hide", include=FALSE}
 a=as_gt(table1)
 gt::gtsave(a, "Table/table1c.png")
@@ -141,7 +125,7 @@ For more detailed tutorial and additional options see the very complete [vignett
 
 ### Using atable
 
-```{r atable1 results='hide'}
+```{r atable1, results=FALSE}
 library(atable)
 table1=atable(d,
        target_cols = c("mpg" , "cyl" , "vs_f"),
@@ -152,25 +136,31 @@ table1=atable(d,
 
 or similar using the formula interface
 
-```{r atable1b results='hide'}
+```{r atable1b, results='hide'}
 table1=atable(mpg+cyl+ vs_f ~ am_f, d,
               format_to="Word")
 table1
+```
+
+By default atable is printing p-values, test statistics as well as effect sizes with a 95% confidence interval. As stated above baseline tables are descriptive tables and  should not contain this type of information. Don't forget to remove the columns.
+```{r atable1c, results='hide'}
+table1=table1%>%select(-"p",-"stat",-"Effect Size (CI)")
 ```
 
 ```{r atable1_save, results="hide", include=FALSE}
 a=gt::gt(table1)
 gt::gtsave(a, "Table/table2.png")
 ```
-<img src='Table/table2.png' align="center" width="80%">
+<img src='Table/table2.png' align="center" width="60%">
 
-The table may also be splitted in strata. For example, we can decide to present separately the characteristics of car with a "V" or a "Straight" engine. 
+The table may also be split in strata. For example, we can decide to present separately the characteristics of car with a "V" or a "Straight" engine. 
 
 
 
-```{r atable2 results='hide'}
+```{r atable2, results='hide'}
 table1=atable(mpg+cyl  ~ am_f|vs_f , d,
               format_to="Word")
+table1=table1%>%select(-"p",-"stat",-"Effect Size (CI)")
 table1
 ```
 
@@ -178,12 +168,12 @@ table1
 a=gt::gt(table1)
 gt::gtsave(a, "Table/table2a.png")
 ```
-<img src='Table/table2a.png' align="center" width="80%">
+<img src='Table/table2a.png' align="center" width="60%">
 
 
-As gtsummary, atable may be exported in different formats (e.g. LATEX, HTML, Word) and it is intended that some parts of atable can be altered by the user. Hence the type variable,descriptive statistics, used statistical tests may defined otherwise (for more details see @Strbel2019atableCT as well as the package [vignette](https://cran.r-project.org/web/packages/atable/vignettes/atable_usage.pdf). An other informative vignette can be found by typing the foloowing command in R:
+As gtsummary, atable may be exported in different formats (e.g. LATEX, HTML, Word) and it is intended that some parts of atable can be altered by the user.  For example the  variable type may defined otherwise (for more details see @Strbel2019atableCT as well as the package [vignette](https://cran.r-project.org/web/packages/atable/vignettes/atable_usage.pdf). An other informative vignette can be found by typing the following command in R:
 
-```{r atable_vignette eval=FALSE, include=TRUE}
+```{r atable_vignette, eval=FALSE, include=TRUE}
 vignette("modifying", package = "atable")
 ```
 
@@ -195,7 +185,7 @@ Optionally, the table can be restricted to effect measures of choice and a numbe
 
 ## Instalation
 
-```{r btable_setup eval=FALSE, include=TRUE}
+```{r btable_setup, eval=FALSE, include=TRUE}
 #In order to install btable from github the github-package is required:
 net install github, from("https://haghish.github.io/github/")
 #You can then install the development version of btable with:
@@ -204,19 +194,19 @@ github install CTU-Bern/btable
 
 ## Example
 
-```{r btable1_code eval=FALSE, include=TRUE}
+```{r btable1_code, eval=FALSE, include=TRUE}
 # load example dataset
 sysuse auto2
 
 # generate table
 btable price mpg rep78 headroom, by(foreign) saving("excars") denom(nonmiss)
 
-# format table (default formatting)
-btable_format using "excars", clear
+# format table (default formatting, removing the effect measures and P-values)
+btable_format using "excars", clear drop(effect test)
 ```
 
 
-```{r btable1_results include=FALSE}
+```{r btable1_results, include=FALSE}
 dat <- readr::read_csv("Table/btab1.csv")
 dat[is.na(dat)] <- "" # replace NAs
 names(dat)[1] <- " "  # set missing var name
@@ -232,17 +222,17 @@ dat %>%
 The formatting option can be modified. For example we can decide we may want to
 
 - present the median and lower and upper quartiles instead of the mean and standard deviation 
-- remove the overall column, the effect measure, and the information column
+- remove the overall column, and the information column
 
-```{r btable2_code eval=FALSE, include=TRUE}
+```{r btable2_code, eval=FALSE, include=TRUE}
 #If we want to display median [lq, up] for all the continuous variables
-btable_format using "excars", clear descriptive(conti median [lq, uq]) drop(total effect info)
+btable_format using "excars", clear descriptive(conti median [lq, uq]) drop(effect test total info)
 
 #If we want to display mean (sd) for the mpg variable and median [lq, up] for all the other continuous variables
-btable_format using "excars", clear desc(conti median [lq, uq] mpg mean (sd)) drop(total effect info)
+btable_format using "excars", clear desc(conti median [lq, uq] mpg mean (sd)) drop(effect test total info)
 ```
 
-```{r btable2_results include=FALSE}
+```{r btable2_results, include=FALSE}
 dat <- readr::read_csv("Table/btab2.csv")
 dat[is.na(dat)] <- "" # replace NAs
 names(dat)[1] <- " "  # set missing var name
@@ -254,6 +244,15 @@ dat=dat %>%
 <img src='Table/btabl2.png' align="center" width="80%">
 
 
+# Quiz
 
+Here is a short quiz to check your understanding... 
+
+###### Question 1:
+Which summary statistics can I give to describe continuous and categorical variables? 
+
+# Quiz answers 
+
+Question 1: Descriptive statistics are typically given as frequency for categorical or binary variables, mean and (standard deviation)for continuous normal variables and median (25th-75th percentile or minimum-maximum) for non-normal continuous variables.
 
 # References
