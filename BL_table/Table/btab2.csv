@@ -1,0 +1,11 @@
+,Domestic (N = 52),Foreign (N = 22)
+,"mean (sd), median [lq, uq] or n (%)","mean (sd), median [lq, uq] or n (%)"
+Price,"4783 [4184, 6234]","5759 [4499, 7140]"
+Mileage (mpg),20 (4.7),25 (6.6)
+Repair Record 1978,,
+    Poor,2 (4.2%),0 (0.00%)
+    Fair,8 (17%),0 (0.00%)
+    Average,27 (56%),3 (14%)
+    Good,9 (19%),9 (43%)
+    Excellent,2 (4.2%),9 (43%)
+Headroom (in.),"3.5 [2.3, 4.0]","2.5 [2.5, 3.0]"
