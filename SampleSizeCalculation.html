@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Statistics and Methodology - tools and support - Sample size calculation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./docs/SCTO_Platforms.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <img src="./docs/SCTO_Platforms.png" alt="">
+    <span class="navbar-title">Statistics and Methodology - tools and support</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Sample size calculation</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">For clinicians</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DataSharing.html" class="sidebar-item-text sidebar-link">Data sharing</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ReportingGuidelines.html" class="sidebar-item-text sidebar-link">Reporting guidelines</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./SampleSizeCalculation.html" class="sidebar-item-text sidebar-link active">Sample size calculation</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">For programmers</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./baselinetables.html" class="sidebar-item-text sidebar-link">Make a baseline table</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./software.html" class="sidebar-item-text sidebar-link">Software packages</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">About</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./courses.html" class="sidebar-item-text sidebar-link">Courses</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./blog/index.html" class="sidebar-item-text sidebar-link">Blog</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a>
+  <ul class="collapse">
+  <li><a href="#two-main-paradigms" id="toc-two-main-paradigms" class="nav-link" data-scroll-target="#two-main-paradigms">Two main paradigms:</a></li>
+  <li><a href="#what-the-statistician-needs-to-know" id="toc-what-the-statistician-needs-to-know" class="nav-link" data-scroll-target="#what-the-statistician-needs-to-know">What the statistician needs to know</a></li>
+  </ul></li>
+  <li><a href="#quiz" id="toc-quiz" class="nav-link" data-scroll-target="#quiz">Quiz</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Example(s)</a>
+  <ul class="collapse">
+  <li><a href="#the-nhst-framework" id="toc-the-nhst-framework" class="nav-link" data-scroll-target="#the-nhst-framework">The NHST framework</a></li>
+  <li><a href="#the-precision-based-framework" id="toc-the-precision-based-framework" class="nav-link" data-scroll-target="#the-precision-based-framework">The precision based framework</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Sample size calculation</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="background" class="level1">
+<h1>Background</h1>
+<p>In clinical research, one of the first technical hurdles to a project is the sample size calculation - how many participants would you need to include to be able to answer your research question? They are required by funding bodies, ethics and safety regulators. They can also be important to the sponsor - without a good sample size calculation, how can you tell if you will be able to achieve your aims?</p>
+<!-- Figure here of clinician/statistician discussion?? Michael Coslovsky used to have a funny one... -->
+<p>Speaking with a statistician about sample size calculation can be frustrating for both parties. The investigator just wants a number that they can write in their proposal/protocol/grant application. The statistician cannot give a number without various details. Hence, a good understanding from both sides is primordial. The aim of the study has to be well defined and all the needed assumptions educated guessed.</p>
+<p>There are two important concepts to understand before we move forward: Type 1 error and Type 2 error.</p>
+<section id="type-1-error" class="level4">
+<h4 class="anchored" data-anchor-id="type-1-error">Type 1 error</h4>
+<p>A type 1 error is the rejection of the null hypothesis when it is actually true (i.e.&nbsp;a false positive - e.g.&nbsp;a pregnant man). This is controlled by the selection of <span class="math inline">\(\alpha\)</span>, the test significance level, which is normally set at 0.05 (which represents incorrectly rejecting the null hypothesis 5% of the time). For more exploratory analyses, it might be relaxed it to 0.1.</p>
+</section>
+<section id="type-2-error" class="level4">
+<h4 class="anchored" data-anchor-id="type-2-error">Type 2 error</h4>
+<p>Type 2 errors are failing to reject the null hypotheses when they is actually false (i.e.&nbsp;a false negative - e.g.&nbsp;telling a pregnant woman that is not pregnant). This is controlled by the power, which is generally set at 0.8. Power is the probability of correctly rejecting the null hypothesis when the alternative hypothesis is true.</p>
+</section>
+<section id="two-main-paradigms" class="level3">
+<h3 class="anchored" data-anchor-id="two-main-paradigms">Two main paradigms:</h3>
+<section id="null-hypothesis-significance-testing-nhst" class="level4">
+<h4 class="anchored" data-anchor-id="null-hypothesis-significance-testing-nhst">Null hypothesis significance testing (NHST)</h4>
+<p>The aim is to assess if there is a statistical difference between e.g.&nbsp;two groups. For example</p>
+<ul>
+<li>does medication X lower Y more than medication Z</li>
+<li>does surgery X results in fewer Y than surgery Z</li>
+</ul>
+</section>
+<section id="precision-based-approaches" class="level4">
+<h4 class="anchored" data-anchor-id="precision-based-approaches">Precision based approaches</h4>
+<p>The focus is rather on estimating a quantity to a given accuracy. For example, we might expect that 40% of people have a given event within a certain time frame, but we want to estimate that 40% with a specific precision, in other words within a certain interval, e.g.&nbsp;5% (2.5% on either side). We are interested in the width of the confidence interval (CI). It is also possible to estimate width of the CI for differences (e.g.&nbsp;mean differences) and relative effects (e.g.&nbsp;odds ratios, relative risks).</p>
+</section>
+</section>
+<section id="what-the-statistician-needs-to-know" class="level3">
+<h3 class="anchored" data-anchor-id="what-the-statistician-needs-to-know">What the statistician needs to know</h3>
+<section id="what-is-the-main-comparison" class="level4">
+<h4 class="anchored" data-anchor-id="what-is-the-main-comparison">What is the main comparison?</h4>
+<p>Between two groups is the most common (e.g.&nbsp;intervention vs control).</p>
+</section>
+<section id="what-is-the-primary-endpoint" class="level4">
+<h4 class="anchored" data-anchor-id="what-is-the-primary-endpoint">What is the primary endpoint?</h4>
+<ul>
+<li>what type of variable is it? Continuous? Binary? Time-to-event?</li>
+<li>when is it measured? Thirty days? Six months? One year?</li>
+</ul>
+</section>
+<section id="what-effect-do-you-expect-to-see" class="level4">
+<h4 class="anchored" data-anchor-id="what-effect-do-you-expect-to-see">What effect do you expect to see?</h4>
+<ul>
+<li>if you have continuous data, will the difference in means be 10, 20, …, 100?</li>
+<li>if you have binary data, what proportion of events do you expect in the groups?</li>
+</ul>
+</section>
+<section id="how-variable-will-the-endpoint-be" class="level4">
+<h4 class="anchored" data-anchor-id="how-variable-will-the-endpoint-be">How variable will the endpoint be?</h4>
+<p>For continuous outcomes, standard deviations are typically called for. This is less relevant if you have a binary endpoint.</p>
+<!-- Panel A in the following figure show densities with identical mean values (10), but different standard deviations. Testing a difference with the one on the left would require a much smaller sample size than for the case on the right. Data from those two distributions are shown in panel B. -->
+</section>
+</section>
+</section>
+<section id="quiz" class="level1">
+<h1>Quiz</h1>
+<p>Here is a short quiz to check your understanding…</p>
+<!-- Ideally, the correct answers would popup when the questions have been answered. That should be possible with a full blown website, but not on GitHub -->
+<section id="question-1-in-a-court-room-the-defendant-is-incorrectly-sentenced-to-prison.-this-is-an-example-of" class="level6">
+<h6 class="anchored" data-anchor-id="question-1-in-a-court-room-the-defendant-is-incorrectly-sentenced-to-prison.-this-is-an-example-of">Question 1: In a court room, the defendant is incorrectly sentenced to prison. This is an example of…</h6>
+<ul>
+<li>A. A type 1 error</li>
+<li>B. A type 2 error</li>
+</ul>
+<details>
+<summary>
+Answer
+</summary>
+A is the correct answer. The defendant is innocent, so sentencing them to prison is wrong, a false positive.
+</details>
+</section>
+<section id="question-2-type-2-errors-are-controlled-by" class="level6">
+<h6 class="anchored" data-anchor-id="question-2-type-2-errors-are-controlled-by">Question 2: Type 2 errors are controlled by</h6>
+<ul>
+<li>A. <a href="#Question 2" data-toggle="popover" title="Incorrect. Type 2 errors are due to lack of precision - sample size">Test significance</a></li>
+<li>B. <a href="#Question 2" data-toggle="popover" title="Correct!">Larger sample size</a></li>
+<li>C. <a href="#Question 2" data-toggle="popover" title="Correct!">Power</a></li>
+<li>D. <a href="#Question 2" data-toggle="popover" title="Incorrect!">Smaller variation between participants</a></li>
+</ul>
+<details>
+<summary>
+Answer
+</summary>
+B or C - a larger sample increases power which reduces the risk of a type 2 error
+</details>
+</section>
+<section id="question-3-you-suspect-that-there-is-a-difference-between-treatments-and-want-to-quantify-that-difference-to-within-a-certain-margin.-what-paradigm-are-you-in" class="level6">
+<h6 class="anchored" data-anchor-id="question-3-you-suspect-that-there-is-a-difference-between-treatments-and-want-to-quantify-that-difference-to-within-a-certain-margin.-what-paradigm-are-you-in">Question 3: You suspect that there is a difference between treatments and want to quantify that difference to within a certain margin. What paradigm are you in?</h6>
+<ul>
+<li>A. Null-hypothesis testing</li>
+<li>B. Bayesian</li>
+<li>C. Precision</li>
+<li>D. Frequentist</li>
+</ul>
+<details>
+<summary>
+Answer
+</summary>
+C - you’re not testing a difference, just trying the estimate the quantity to within a given limit
+</details>
+</section>
+<section id="question-4-continuing-from-the-question-3.-suppose-instead-that-you-want-to-test-if-one-treatment-has-a-higher-mean-value-of-an-outcome-than-the-other-treatment.-what-information-would-the-statistician-need-to-perform-a-sample-size-calculation-check-all-that-might-apply." class="level6">
+<h6 class="anchored" data-anchor-id="question-4-continuing-from-the-question-3.-suppose-instead-that-you-want-to-test-if-one-treatment-has-a-higher-mean-value-of-an-outcome-than-the-other-treatment.-what-information-would-the-statistician-need-to-perform-a-sample-size-calculation-check-all-that-might-apply.">Question 4: Continuing from the Question 3. Suppose instead that you want to test if one treatment has a higher mean value of an outcome than the other treatment. What information would the statistician need to perform a sample size calculation? Check all that might apply.</h6>
+<ul>
+<li>A. The cost of determining the outcome</li>
+<li>B. The mean value of the outcome in the relevant population</li>
+<li>C. An estimate of the variability within the population</li>
+<li>D. An estimate of the difference you expect to see between treatments</li>
+<li>E. The number of individuals with the condition that pass through your institution per year</li>
+</ul>
+<details>
+<summary>
+Answer
+</summary>
+B, C, and D are all important. E can also be useful for approximating trial duration.
+</details>
+</section>
+</section>
+<section id="examples" class="level1">
+<h1>Example(s)</h1>
+<p>Here we present a couple of very short examples of how sample size calculations can be performed, although we do recommend discussing your project with a statistician.</p>
+<section id="the-nhst-framework" class="level3">
+<h3 class="anchored" data-anchor-id="the-nhst-framework">The NHST framework</h3>
+<p>Suppose we want to estimate the mean difference between two groups (intervention vs placebo) and would like to be able to test it against “no difference”. We have to define which difference will be clinically relevant to test. Let assume that a difference of 20 between both groups is clinically relevant. We also need to guess in an educated way the standard deviation (SD) of the outcome in the groups. Let assume a SD of 12 in each group. We also have to set the power we want to achieve and the probability of type I error (alpha) we will allowed. In this example a power of 90% with a two-sided alpha of 5% can be reached with a sample size of 18, i.e.&nbsp;9 participants in each group, to test if this difference is equal to null.</p>
+<p>Parameters to assume or set:</p>
+<ul>
+<li>mean difference (delta)</li>
+<li>standard deviations</li>
+<li>power</li>
+<li>probability of type I error (alpha)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>(<span class="at">delta =</span> <span class="dv">20</span>, <span class="at">sd =</span> <span class="dv">12</span>, <span class="at">sig.level =</span> <span class="fl">0.05</span>, <span class="at">power =</span> .<span class="dv">9</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">type =</span> <span class="st">"two.sample"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Two-sample t test power calculation 
+
+              n = 8.649245
+          delta = 20
+             sd = 12
+      sig.level = 0.05
+          power = 0.9
+    alternative = two.sided
+
+NOTE: n is number in *each* group</code></pre>
+</div>
+</div>
+<p>If the difference between both groups is smaller the requested sample size to reach the same power with all the other parameters as above will be larger. Similarly, increasing the larger variation around the mean (larger standard deviation) also increases the sample size.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>(<span class="at">delta =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">12</span>, <span class="at">sig.level =</span> <span class="fl">0.05</span>, <span class="at">power =</span> .<span class="dv">9</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">type =</span> <span class="st">"two.sample"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Two-sample t test power calculation 
+
+              n = 31.25372
+          delta = 10
+             sd = 12
+      sig.level = 0.05
+          power = 0.9
+    alternative = two.sided
+
+NOTE: n is number in *each* group</code></pre>
+</div>
+</div>
+<p>Multiple plausible scenario can be investigated, by varying some parameters. The <a href="https://CRAN.R-project.org/package=sse"><code>sse</code> package</a> (<span class="citation" data-cites="sse">Fabbro (<a href="#ref-sse" role="doc-biblioref">2021</a>)</span>), provides a mechanism to create multiple scenarios and examine power in each, together with functions to aid reporting. <code>sse</code> is very flexible, but does require some programming.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sse)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="do">## defining the range of n and theta to be evaluated</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>psi <span class="ot">&lt;-</span> <span class="fu">powPar</span>(</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># SD values</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">theta =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">5</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="dv">1</span>),</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># sample sizes</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">5</span>, <span class="at">to =</span> <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">2</span>),</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># group means</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">muA =</span> <span class="dv">0</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">muB =</span> <span class="dv">20</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="do">## define a function to return the power in each scenario</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>powFun <span class="ot">&lt;-</span> <span class="cf">function</span>(psi){</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">power.t.test</span>(<span class="at">n =</span> <span class="fu">n</span>(psi)<span class="sc">/</span><span class="dv">2</span>,</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>               <span class="at">delta =</span> <span class="fu">pp</span>(psi, <span class="st">"muA"</span>) <span class="sc">-</span> <span class="fu">pp</span>(psi, <span class="st">"muB"</span>),</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">sd =</span> <span class="fu">theta</span>(psi)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">$</span>power</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="do">## evaluate the power-function for all combinations of n and theta</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>calc <span class="ot">&lt;-</span> <span class="fu">powCalc</span>(psi, powFun)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="do">## choose one particular example at theta of 1 and power of 0.9</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>pow <span class="ot">&lt;-</span> <span class="fu">powEx</span>(calc, <span class="at">theta =</span> <span class="dv">12</span>, <span class="at">power =</span> <span class="fl">0.9</span>)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="do">## drawing the power plot with 3 contour lines</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pow,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Standard Deviation"</span>,</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Total Sample Size"</span>,</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>     <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.85</span>, <span class="fl">0.9</span>, <span class="fl">0.95</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="SampleSizeCalculation_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>For additional details, see the <code>sse</code> package documentation on <a href="https://CRAN.R-project.org/package=sse">CRAN</a>.</p>
+</section>
+<section id="the-precision-based-framework" class="level3">
+<h3 class="anchored" data-anchor-id="the-precision-based-framework">The precision based framework</h3>
+<p>Suppose we want to estimate the proportion of deaths within 30 days of a myocardial infarction (MI). <span class="citation" data-cites="law2002">Law, Watt, and Wald (<a href="#ref-law2002" role="doc-biblioref">2002</a>)</span> estimated that 36% (31% - 40%) of patients died within 30 days of an MI. If we want to replicate their study, we can estimate the number of participants that would be necessary to achieve a CI which is 9% wide. Members of the SCTO Statistics and Methodology platform created an R package specifically for this problem called <code>presize</code> (<span class="citation" data-cites="presize">Haynes et al. (<a href="#ref-presize" role="doc-biblioref">2021</a>)</span>). It is available on <a href="https://CRAN.R-project.org/package=presize">CRAN</a> or as an easy to use <a href="https://shiny.ctu.unibe.ch/presize/">shiny application</a>.</p>
+<p>The relevant function in presize is the <code>prec_prop</code> function. Plugging in the numbers from above, we can see that we require 434 participants (column <code>n</code>) to yield a confidence interval from 31.6% (<code>lwr</code>) to 40.6% (<code>upr</code>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(presize)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">prec_prop</span>(<span class="at">p =</span> <span class="fl">0.36</span>, <span class="at">conf.width =</span> <span class="fl">0.09</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     sample size for a proportion with Wilson confidence interval. 
+
+     p      padj        n conf.width conf.level       lwr       upr
+1 0.36 0.3612296 433.5577       0.09       0.95 0.3162296 0.4062296
+
+NOTE: padj is the adjusted proportion, from which the ci is calculated.</code></pre>
+</div>
+</div>
+<p>If we know that we can only afford to follow 300 participants, we can see what the confidence interval would be in that case too, via the <code>n</code> argument (instead of <code>cond.width</code>):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prec_prop</span>(<span class="at">p =</span> <span class="fl">0.36</span>, <span class="at">n =</span> <span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     precision for a proportion with Wilson confidence interval. 
+
+     p    padj   n conf.width conf.level       lwr       upr
+1 0.36 0.36177 300  0.1080014       0.95 0.3077693 0.4157707
+
+NOTE: padj is the adjusted proportion, from which the ci is calculated.</code></pre>
+</div>
+</div>
+<p>It’s also possible to check multiple scenarios, by passing multiple values to a parameter. Below we vary the number of participants (what CI width is possible to determine with that number of participants?):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prec_prop</span>(<span class="at">p =</span> .<span class="dv">36</span>, <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">300</span>, <span class="dv">350</span>, <span class="dv">400</span>, <span class="dv">450</span>, <span class="dv">450</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     precision for a proportion with Wilson confidence interval. 
+
+     p      padj   n conf.width conf.level       lwr       upr
+1 0.36 0.3617700 300 0.10800136       0.95 0.3077693 0.4157707
+2 0.36 0.3615199 350 0.10007265       0.95 0.3114836 0.4115562
+3 0.36 0.3613317 400 0.09366763       0.95 0.3144979 0.4081655
+4 0.36 0.3611850 450 0.08835346       0.95 0.3170083 0.4053617
+5 0.36 0.3611850 450 0.08835346       0.95 0.3170083 0.4053617
+
+NOTE: padj is the adjusted proportion, from which the ci is calculated.</code></pre>
+</div>
+</div>
+<p>The results can also be plotted easily, which is particularly useful when running multiple scenarios.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)  <span class="co"># for plotting</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr) <span class="co"># for 'piping'</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">prec_prop</span>(<span class="at">p =</span> .<span class="dv">36</span>, <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">300</span>, <span class="dv">350</span>, <span class="dv">400</span>, <span class="dv">450</span>, <span class="dv">500</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> n, <span class="at">y =</span> conf.width)) <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"N participants"</span>, </span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"CI width"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="SampleSizeCalculation_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>For additional details and examples, see the <a href="https://ctu-bern.github.io/presize/"><code>presize</code> website</a>.</p>
+<!-- we could embed the presize app... -->
+<!-- :::{.column-page} -->
+<!-- <iframe height="400" width="90%" frameborder="no" src="https://shiny.ctu.unibe.ch/presize"> </iframe> -->
+<!-- ::: -->
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>Sample size calculation is a very important part of the study planning process. To make the most of your meeting with the statistician, have the answers to the questions mentioned above.</p>
+<!-- # Quiz answers  -->
+<!-- Question 1: A (it's a false positive).   -->
+<!-- Question 2: B or C (a larger sample increases power which reduces the risk of a type 2 error).   -->
+<!-- Question 3: C (you're not testing a difference, just trying the estimate the quantity to within a given limit).   -->
+<!-- Question 4: B, C, and D (these are all important. E can also be useful for approximating trial duration. -->
+</section>
+<section id="references" class="level1">
+
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-sse" class="csl-entry" role="doc-biblioentry">
+Fabbro, Thomas. 2021. <em>Sse: Sample Size Estimation</em>. <a href="https://CRAN.R-project.org/package=sse">https://CRAN.R-project.org/package=sse</a>.
+</div>
+<div id="ref-presize" class="csl-entry" role="doc-biblioentry">
+Haynes, Alan G., Armando Lenz, Odile Stalder, and Andreas Limacher. 2021. <span>“‘Presize‘: An r-Package for Precision-Based Sample Size Calculation in Clinical Research.”</span> <em>Journal of Open Source Software</em> 6 (60): 3118. <a href="https://doi.org/10.21105/joss.03118">https://doi.org/10.21105/joss.03118</a>.
+</div>
+<div id="ref-law2002" class="csl-entry" role="doc-biblioentry">
+Law, Malcolm R., Hilary C. Watt, and Nicholas J. Wald. 2002. <span>“<span class="nocase">The Underlying Risk of Death After Myocardial Infarction in the Absence of Treatment</span>.”</span> <em>Archives of Internal Medicine</em> 162 (21): 2405–10. <a href="https://doi.org/10.1001/archinte.162.21.2405">https://doi.org/10.1001/archinte.162.21.2405</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">CC-BY SCTO Statistics and Methodology</div>
+  </div>
+</footer>
+
+
+
+</body></html>

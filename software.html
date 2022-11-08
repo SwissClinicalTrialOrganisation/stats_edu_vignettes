@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Statistics and Methodology - tools and support - Software packages</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./docs/SCTO_Platforms.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <img src="./docs/SCTO_Platforms.png" alt="">
+    <span class="navbar-title">Statistics and Methodology - tools and support</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Software packages</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">For clinicians</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DataSharing.html" class="sidebar-item-text sidebar-link">Data sharing</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ReportingGuidelines.html" class="sidebar-item-text sidebar-link">Reporting guidelines</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./SampleSizeCalculation.html" class="sidebar-item-text sidebar-link">Sample size calculation</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">For programmers</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./baselinetables.html" class="sidebar-item-text sidebar-link">Make a baseline table</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./software.html" class="sidebar-item-text sidebar-link active">Software packages</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">About</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./courses.html" class="sidebar-item-text sidebar-link">Courses</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./blog/index.html" class="sidebar-item-text sidebar-link">Blog</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#scto-funded-packages" id="toc-scto-funded-packages" class="nav-link active" data-scroll-target="#scto-funded-packages">SCTO funded packages</a>
+  <ul class="collapse">
+  <li><a href="#presize---precision-based-sample-size-estimation" id="toc-presize---precision-based-sample-size-estimation" class="nav-link" data-scroll-target="#presize---precision-based-sample-size-estimation"><code>presize</code> - precision based sample size estimation</a></li>
+  <li><a href="#sse---sample-size-estimation" id="toc-sse---sample-size-estimation" class="nav-link" data-scroll-target="#sse---sample-size-estimation"><code>sse</code> - sample size estimation</a></li>
+  <li><a href="#sts_graph_landmark---landmark-analysis-graphs" id="toc-sts_graph_landmark---landmark-analysis-graphs" class="nav-link" data-scroll-target="#sts_graph_landmark---landmark-analysis-graphs"><code>sts_graph_landmark</code> - landmark analysis graphs</a></li>
+  <li><a href="#secutrialr---import-secutrial-datasets-to-r" id="toc-secutrialr---import-secutrial-datasets-to-r" class="nav-link" data-scroll-target="#secutrialr---import-secutrial-datasets-to-r"><code>secuTrialR</code> - import secuTrial datasets to R</a></li>
+  </ul></li>
+  <li><a href="#other-software-developed-by-ctus" id="toc-other-software-developed-by-ctus" class="nav-link" data-scroll-target="#other-software-developed-by-ctus">Other software developed by CTUs</a>
+  <ul class="collapse">
+  <li><a href="#accrualplot---simple-creation-of-accrual-plots" id="toc-accrualplot---simple-creation-of-accrual-plots" class="nav-link" data-scroll-target="#accrualplot---simple-creation-of-accrual-plots"><code>accrualPlot</code> - simple creation of accrual plots</a></li>
+  <li><a href="#btable---create-baseline-tables-in-stata" id="toc-btable---create-baseline-tables-in-stata" class="nav-link" data-scroll-target="#btable---create-baseline-tables-in-stata"><code>btable</code> - create baseline tables in Stata</a></li>
+  <li><a href="#btabler---format-tables-for-latex-reports" id="toc-btabler---format-tables-for-latex-reports" class="nav-link" data-scroll-target="#btabler---format-tables-for-latex-reports"><code>btabler</code> - format tables for LaTeX reports</a></li>
+  <li><a href="#hsar---create-reproducible-hospital-service-areas-in-r" id="toc-hsar---create-reproducible-hospital-service-areas-in-r" class="nav-link" data-scroll-target="#hsar---create-reproducible-hospital-service-areas-in-r"><code>HSAr</code> - create reproducible hospital service areas in R</a></li>
+  <li><a href="#kpitools---tools-to-assist-with-risk-based-management-kpis" id="toc-kpitools---tools-to-assist-with-risk-based-management-kpis" class="nav-link" data-scroll-target="#kpitools---tools-to-assist-with-risk-based-management-kpis"><code>kpitools</code> - tools to assist with risk based management KPIs</a></li>
+  <li><a href="#redcaptools---a-package-for-working-with-redcap-data-in-r" id="toc-redcaptools---a-package-for-working-with-redcap-data-in-r" class="nav-link" data-scroll-target="#redcaptools---a-package-for-working-with-redcap-data-in-r"><code>redcaptools</code> - a package for working with REDCap data in R</a></li>
+  <li><a href="#stata_secutrial---some-stata-code-to-do-data-import-and-preparation-of-secutrial-datasets" id="toc-stata_secutrial---some-stata-code-to-do-data-import-and-preparation-of-secutrial-datasets" class="nav-link" data-scroll-target="#stata_secutrial---some-stata-code-to-do-data-import-and-preparation-of-secutrial-datasets"><code>stata_secutrial</code> - some Stata code to do data import and preparation of secuTrial datasets</a></li>
+  <li><a href="#swissasr---simplified-annual-safety-reports-with-r" id="toc-swissasr---simplified-annual-safety-reports-with-r" class="nav-link" data-scroll-target="#swissasr---simplified-annual-safety-reports-with-r"><code>SwissASR</code> - simplified annual safety reports with R</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Software packages</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>Working with statistical software is the daily business of our statisticians. Most software languages allow their users to create their own packages of custom functions to reduce errors in repeated tasks. The software used by SCTO statisticians, primarily R and Stata, are no different in this respect. This page provides an overview of some.</p>
+<!-- packages are listed in alphabetical order -->
+<section id="scto-funded-packages" class="level1">
+<h1>SCTO funded packages</h1>
+<p>The SCTO Statistics and Methodology platform offers grants to associated statistics specifically for the development of such statistical packages, either for the development of completely new software, or the further development of existing software.</p>
+<section id="presize---precision-based-sample-size-estimation" class="level2">
+<h2 class="anchored" data-anchor-id="presize---precision-based-sample-size-estimation"><code>presize</code> - precision based sample size estimation</h2>
+<p><img src="https://img.shields.io/badge/Language-R-red.svg" class="img-fluid"> <a href="https://github.com/CTU-Bern/presize"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid"></a> <a href="https://ctu-bern.github.io/presize/"><img src="https://img.shields.io/badge/Website-blue.svg" class="img-fluid"></a> <a href="https://cran.r-project.org/package=presize"><img src="https://www.r-pkg.org/badges/version/presize?color=green.png" class="img-fluid"></a> <a href="https://doi.org/10.21105/joss.03118"><img src="https://joss.theoj.org/papers/10.21105/joss.03118/status.svg" class="img-fluid"></a></p>
+<p><code>presize</code> is an R package for precision based sample size calculation. It provides a large number of methods for estimating the number of samples required to gain a confidence interval of a given width, or the width that might be expected with a given sample size.</p>
+<details>
+<summary>
+Example
+</summary>
+<p>Assuming that we want to estimate the confidence interval (CI) around the sensitivity of a test, but we’re not sure of the sensitivity, we can estimate the CI width in a range of scenarios as follows.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(presize)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># set up a range of scenarios</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>scenarios <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">sens =</span> <span class="fu">seq</span>(.<span class="dv">5</span>, .<span class="dv">95</span>, .<span class="dv">1</span>),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">prev =</span> <span class="fu">seq</span>(.<span class="dv">1</span>, .<span class="dv">2</span>, .<span class="dv">04</span>),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">ntot =</span> <span class="fu">c</span>(<span class="dv">250</span>, <span class="dv">350</span>))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the CI width at ntot individuals with prev prevalence of event</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>scenario_data <span class="ot">&lt;-</span> <span class="fu">prec_sens</span>(<span class="at">sens =</span> scenarios<span class="sc">$</span>sens, </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                           <span class="at">prev =</span> scenarios<span class="sc">$</span>prev, </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                           <span class="at">ntot =</span> scenarios<span class="sc">$</span>ntot, </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                           <span class="at">method =</span> <span class="st">"wilson"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the scenarios with ggplot2</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>scenario_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(scenario_data)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(scenario_df, </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> sens, </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> conf.width, </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>           <span class="co"># convert colour to factor for distinct colours rather than a continuum</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">col =</span> <span class="fu">as.factor</span>(prev), </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">group =</span> prev)) <span class="sc">+</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Sensitivity"</span>, <span class="at">y =</span> <span class="st">"CI width"</span>, <span class="at">col =</span> <span class="st">"Prevalence"</span>) <span class="sc">+</span> </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(ntot))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="software_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</details>
+<p>For ease of use, <code>presize</code> also includes a shiny app for point-and-click use, which is also available on the internet.</p>
+<details>
+<summary>
+Installation
+</summary>
+<p><code>presize</code> can be installed in R via the following methods:</p>
+<pre><code># from CRAN (the stable version)
+install.packages("presize")
+
+# from CTU Bern's package universe (the development version)
+install.packages("presize", repos = "https://ctu-bern.r-universe.dev/")</code></pre>
+</details>
+</section>
+<section id="sse---sample-size-estimation" class="level2">
+<h2 class="anchored" data-anchor-id="sse---sample-size-estimation"><code>sse</code> - sample size estimation</h2>
+<p><img src="https://img.shields.io/badge/Language-R-red.svg" class="img-fluid"> <a href="https://github.com/thofab/sse"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid"></a> <a href="http://r-forge.r-project.org/projects/power/"><img src="https://img.shields.io/badge/R%20forge-grey.svg" class="img-fluid"></a> <a href="https://cran.r-project.org/package=sse"><img src="https://www.r-pkg.org/badges/version/sse?color=green.png" class="img-fluid"></a></p>
+<p><code>sse</code> is another R package for sample size calculation that has been in use at CTU Basel for many years. It’s approach is very general, allowing a wide range of scenarios to be assessed rapidly.</p>
+<details>
+<summary>
+Example
+</summary>
+<p>If we want to find the sample size for comparing two means, using a range of standard deviations we can do the following.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sse)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">## defining the range of n and theta to be evaluated</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>psi <span class="ot">&lt;-</span> <span class="fu">powPar</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># SD values</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">theta =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">5</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="dv">1</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># sample sizes</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">5</span>, <span class="at">to =</span> <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">2</span>),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># group means</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">muA =</span> <span class="dv">0</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">muB =</span> <span class="dv">20</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="do">## define a function to return the power in each scenario</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>powFun <span class="ot">&lt;-</span> <span class="cf">function</span>(psi){</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">power.t.test</span>(<span class="at">n =</span> <span class="fu">n</span>(psi)<span class="sc">/</span><span class="dv">2</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">delta =</span> <span class="fu">pp</span>(psi, <span class="st">"muA"</span>) <span class="sc">-</span> <span class="fu">pp</span>(psi, <span class="st">"muB"</span>),</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">sd =</span> <span class="fu">theta</span>(psi)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">$</span>power</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="do">## evaluate the power-function for all combinations of n and theta</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>calc <span class="ot">&lt;-</span> <span class="fu">powCalc</span>(psi, powFun)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Assuming that a standard deviation of 12 is appropriate in this case, and we want a power of 90%, we can plot the power curve:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## choose one particular example at theta of 1 and power of 0.9</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>pow <span class="ot">&lt;-</span> <span class="fu">powEx</span>(calc, <span class="at">theta =</span> <span class="dv">12</span>, <span class="at">power =</span> <span class="fl">0.9</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="do">## drawing the power plot with 3 contour lines</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pow,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Standard Deviation"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Total Sample Size"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.85</span>, <span class="fl">0.9</span>, <span class="fl">0.95</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="software_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</details>
+<details>
+<summary>
+Installation
+</summary>
+<p><code>sse</code> can be installed in R via the following methods:</p>
+<pre><code># from CRAN (the stable version)
+install.packages("sse")
+
+# from CTU Bern's package universe (the development version)
+install.packages("sse", repos = "https://ctu-bern.r-universe.dev/")</code></pre>
+</details>
+</section>
+<section id="sts_graph_landmark---landmark-analysis-graphs" class="level2">
+<h2 class="anchored" data-anchor-id="sts_graph_landmark---landmark-analysis-graphs"><code>sts_graph_landmark</code> - landmark analysis graphs</h2>
+<p><img src="https://img.shields.io/badge/Language-Stata-red.svg" class="img-fluid"> <a href="https://github.com/CTU-Bern/sts_graph_landmark"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid" data-fig-align="left"></a></p>
+<p><code>sts_graph_landmark</code> is a Stata program to create landmark analysis Kaplan-Meier curves, complete with risk table.</p>
+<details>
+<summary>
+Example
+</summary>
+<p>Using <code>sts_graph_landmark</code> is consistent with the other <code>sts_*</code> programs in Stata. The dataset should be <code>stset</code> and then <code>sts_graph_landmark</code> can be called specifying the landmark time in <code>at</code>.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load example dataset (note: this example is nonsensical and only for graphing purposes)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>webuse stan3, clear</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># set data as survival data</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>stset t1, <span class="fu">failure</span>(died) <span class="fu">id</span>(id)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># label treatment arms </span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>label define posttran_l <span class="dv">0</span> <span class="st">"prior transplantation"</span> <span class="dv">1</span> <span class="st">"after transplantation"</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>label value posttran posttran_l</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># create landmark plot and table </span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>sts_graph_landmark, <span class="fu">at</span>(<span class="dv">200</span>) <span class="fu">by</span>(posttran) risktable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><img src="docs/sts_landmark_graph.png" class="img-fluid"></p>
+</details>
+<details>
+<summary>
+Installation
+</summary>
+<p>It can be installed from github:</p>
+<pre><code>net install github, from("https://haghish.github.io/github/")
+github install CTU-Bern/sts_graph_landmark</code></pre>
+</details>
+</section>
+<section id="secutrialr---import-secutrial-datasets-to-r" class="level2">
+<h2 class="anchored" data-anchor-id="secutrialr---import-secutrial-datasets-to-r"><code>secuTrialR</code> - import secuTrial datasets to R</h2>
+<p><img src="https://img.shields.io/badge/Language-R-red.svg" class="img-fluid"> <a href="https://github.com/SwissClinicalTrialOrganisation/secuTrialR"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid"></a> <a href="https://swissclinicaltrialorganisation.github.io/secuTrialR/"><img src="https://img.shields.io/badge/Website-blue.svg" class="img-fluid"></a> <a href="https://cran.r-project.org/package=secuTrialR"><img src="https://www.r-pkg.org/badges/version/secuTrialR?color=green.png" class="img-fluid"></a> <a href="https://doi.org/10.21105/joss.02816"><img src="https://joss.theoj.org/papers/10.21105/joss.02816/status.svg" class="img-fluid"></a></p>
+<!-- because this is technically not a stats package, i put it last, rather than in alphabetical order -->
+<p>secuTrial datasets consist of a lot of files and it can be difficult to get to grips with them. <code>secuTrialR</code> tries to reduce the burden by providing a method to import and format (e.g.&nbsp;adding labels to variables) and explore data.</p>
+<details>
+<summary>
+Example
+</summary>
+<p>Data can be read into R using <code>read_secuTrial</code>. The <code>visit_structure</code> function gives an idea of which forms are required at which visit. <code>plot_recruitment</code> is for plotting trial recruitment.</p>
+<div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(secuTrialR)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># prepare path to example export</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>export_location <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"extdata"</span>, <span class="st">"sT_exports"</span>, <span class="st">"snames"</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"s_export_CSV-xls_CTU05_short_miss_en_utf8.zip"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                               <span class="at">package =</span> <span class="st">"secuTrialR"</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># read all export data</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>sT_export <span class="ot">&lt;-</span> <span class="fu">read_secuTrial</span>(<span class="at">data_dir =</span> export_location)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">visit_structure</span>(sT_export))</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_recruitment</span>(sT_export)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img src="software_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 66.7%;justify-content: center;">
+<p><img src="software_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+</details>
+<p><code>secuTrialR</code> was developed by the data management platform with substantial input from members of the statistics and methodology platform.</p>
+<details>
+<summary>
+Installation
+</summary>
+<p><code>secuTrialR</code> can be installed in R via the following methods:</p>
+<pre><code># from CRAN (the stable version)
+install.packages("secuTrialR")
+
+# from CTU Bern's package universe (the development version)
+install.packages("secuTrialR", repos = "https://ctu-bern.r-universe.dev/")</code></pre>
+</details>
+<!-- eventually... -->
+<!-- ## `shiny_template` - a template shiny app for use in clinical trials and registries -->
+<!-- Rather than a fully blown R package, it provides a template that can be adapted to be used with trial databases. -->
+<!-- `shiny_template` was developed by the data management platform with substantial input from members of the statistics and methodology platform. -->
+</section>
+</section>
+<section id="other-software-developed-by-ctus" class="level1">
+<h1>Other software developed by CTUs</h1>
+<p>CTU’s sometimes also develop software without explicit funding from the SCTO platform.</p>
+<section id="accrualplot---simple-creation-of-accrual-plots" class="level2">
+<h2 class="anchored" data-anchor-id="accrualplot---simple-creation-of-accrual-plots"><code>accrualPlot</code> - simple creation of accrual plots</h2>
+<p><img src="https://img.shields.io/badge/Language-R-red.svg" class="img-fluid"> <a href="https://github.com/CTU-Bern/accrualPlot"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid"></a> <a href="https://ctu-bern.github.io/accrualPlot/"><img src="https://img.shields.io/badge/Website-blue.svg" class="img-fluid"></a> <a href="https://cran.r-project.org/package=accrualPlot"><img src="https://www.r-pkg.org/badges/version/accrualPlot?color=green.png" class="img-fluid"></a></p>
+<p><code>accrualPlot</code> is an R package for summarizing trial recruitment data. With relatively little code, it is possible to create various plots and tables useful for recruitment reports, as well as predict the end of recruitment based on the recruitment to date.</p>
+<details>
+<summary>
+Example
+</summary>
+<p><code>accrualPlot</code> includes a simulated dataset of participants recruited into a trial in one of three sites. The <code>accrual_create_df</code> function is used to define the properties of the sites (e.g.&nbsp;start dates if that differs from the first participants recruitment date). The plot and summary functions can then be used to plot or tabulate the data. The data can be plot using either base graphics or <code>ggplot2</code>.</p>
+<div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(accrualPlot)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(accrualdemo)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">accrual_create_df</span>(accrualdemo<span class="sc">$</span>date, <span class="at">by =</span> accrualdemo<span class="sc">$</span>site)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># cumulative recruitment</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df, <span class="at">which =</span> <span class="st">"cum"</span>, <span class="at">engine =</span> <span class="st">"ggplot2"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># absolute recruitment (daily/weekly/monthly)</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df, <span class="at">which =</span> <span class="st">"abs"</span>, <span class="at">engine =</span> <span class="st">"ggplot2"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># predict end date</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df, <span class="at">which =</span> <span class="st">"pred"</span>, <span class="at">target =</span> <span class="dv">300</span>, <span class="at">engine =</span> <span class="st">"ggplot2"</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># summary table</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(<span class="fu">summary</span>(df)) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">column_labels.hidden =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="software_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="software_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="software_files/figure-html/unnamed-chunk-6-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+
+<div id="dhcqdvdnvk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#dhcqdvdnvk .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#dhcqdvdnvk .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dhcqdvdnvk .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#dhcqdvdnvk .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#dhcqdvdnvk .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dhcqdvdnvk .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dhcqdvdnvk .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#dhcqdvdnvk .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#dhcqdvdnvk .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#dhcqdvdnvk .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#dhcqdvdnvk .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#dhcqdvdnvk .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#dhcqdvdnvk .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#dhcqdvdnvk .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#dhcqdvdnvk .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#dhcqdvdnvk .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#dhcqdvdnvk .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dhcqdvdnvk .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#dhcqdvdnvk .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#dhcqdvdnvk .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dhcqdvdnvk .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#dhcqdvdnvk .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#dhcqdvdnvk .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dhcqdvdnvk .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dhcqdvdnvk .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#dhcqdvdnvk .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#dhcqdvdnvk .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dhcqdvdnvk .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dhcqdvdnvk .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dhcqdvdnvk .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dhcqdvdnvk .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dhcqdvdnvk .gt_left {
+  text-align: left;
+}
+
+#dhcqdvdnvk .gt_center {
+  text-align: center;
+}
+
+#dhcqdvdnvk .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#dhcqdvdnvk .gt_font_normal {
+  font-weight: normal;
+}
+
+#dhcqdvdnvk .gt_font_bold {
+  font-weight: bold;
+}
+
+#dhcqdvdnvk .gt_font_italic {
+  font-style: italic;
+}
+
+#dhcqdvdnvk .gt_super {
+  font-size: 65%;
+}
+
+#dhcqdvdnvk .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#dhcqdvdnvk .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#dhcqdvdnvk .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#dhcqdvdnvk .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#dhcqdvdnvk .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#dhcqdvdnvk .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#dhcqdvdnvk .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  
+  
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">Center</td>
+<td class="gt_row gt_left">First participant in</td>
+<td class="gt_row gt_left">Months accruing</td>
+<td class="gt_row gt_left">Participants accrued</td>
+<td class="gt_row gt_left">Accrual rate (per month)</td></tr>
+    <tr><td class="gt_row gt_left">Site 1</td>
+<td class="gt_row gt_left">09Jul2020</td>
+<td class="gt_row gt_left">3</td>
+<td class="gt_row gt_left">141</td>
+<td class="gt_row gt_left">45.98</td></tr>
+    <tr><td class="gt_row gt_left">Site 2</td>
+<td class="gt_row gt_left">20Jul2020</td>
+<td class="gt_row gt_left">3</td>
+<td class="gt_row gt_left">88</td>
+<td class="gt_row gt_left">32.59</td></tr>
+    <tr><td class="gt_row gt_left">Site 3</td>
+<td class="gt_row gt_left">04Sep2020</td>
+<td class="gt_row gt_left">1</td>
+<td class="gt_row gt_left">21</td>
+<td class="gt_row gt_left">18.00</td></tr>
+    <tr><td class="gt_row gt_left">Overall</td>
+<td class="gt_row gt_left">09Jul2020</td>
+<td class="gt_row gt_left">3</td>
+<td class="gt_row gt_left">250</td>
+<td class="gt_row gt_left">81.52</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details>
+<details>
+<summary>
+Installation
+</summary>
+<p><code>accrualPlot</code> can be installed in R via the following methods:</p>
+<pre><code># from CRAN (the stable version)
+install.packages("accrualPlot")
+
+# from CTU Bern's package universe (the development version)
+install.packages("accrualPlot", repos = "https://ctu-bern.r-universe.dev/")</code></pre>
+</details>
+</section>
+<section id="btable---create-baseline-tables-in-stata" class="level2">
+<h2 class="anchored" data-anchor-id="btable---create-baseline-tables-in-stata"><code>btable</code> - create baseline tables in Stata</h2>
+<p><img src="https://img.shields.io/badge/Language-Stata-red.svg" class="img-fluid"> <a href="https://github.com/CTU-Bern/btable"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid" data-fig-align="left"></a></p>
+<p>Creating baseline tables is a repetitive task. Each paper needs one. <code>btable</code> provides a powerful approach to creating them. See the <a href="./baselinetables.html#stata-btable">making baseline tables article for an example</a>. More information on <code>btable</code> can be found <a href="https://github.com/CTU-Bern/btable" target="_blank&quot; rel">here</a>.</p>
+<details>
+<summary>
+Installation
+</summary>
+<p><code>btable</code> can be installed in Stata via the following method:</p>
+<pre><code>net install github, from("https://haghish.github.io/github/")
+github install CTU-Bern/btable</code></pre>
+</details>
+</section>
+<section id="btabler---format-tables-for-latex-reports" class="level2">
+<h2 class="anchored" data-anchor-id="btabler---format-tables-for-latex-reports"><code>btabler</code> - format tables for LaTeX reports</h2>
+<p><img src="https://img.shields.io/badge/Language-R-red.svg" class="img-fluid"> <a href="https://github.com/CTU-Bern/btabler" target="_blank&quot; rel"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid"></a> <a href="https://ctu-bern.github.io/btabler/" target="_blank"><img src="https://img.shields.io/badge/Website-blue.svg" class="img-fluid"></a></p>
+<p><code>btabler</code> adds additional functionality to the <code>xtable</code> package such as merging column headers for use in tables for LaTeX. It was originally developed as an easy way to put tables generated by `btable` into LaTeX reports, hence the similarity in names.</p>
+<details>
+<summary>
+Example
+</summary>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(btabler)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">""</span>, <span class="st">""</span>, <span class="st">"Row 1"</span>, <span class="st">"Row2"</span>),</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">out_t =</span> <span class="fu">c</span>(<span class="st">"Total"</span>, <span class="st">"mean (sd)"</span>, <span class="st">"t1"</span>, <span class="st">"t1"</span>),</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">out_1 =</span> <span class="fu">c</span>(<span class="st">"Group 1"</span>, <span class="st">"mean (sd)"</span>, <span class="st">"g11"</span>, <span class="st">"g12"</span>),</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">out_2 =</span> <span class="fu">c</span>(<span class="st">"Group 2"</span>, <span class="st">"mean (sd)"</span>, <span class="st">"g21"</span>, <span class="st">"g22"</span>))</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">btable</span>(df, <span class="at">nhead =</span> <span class="dv">2</span>, <span class="at">nfoot =</span> <span class="dv">0</span>, <span class="at">caption =</span> <span class="st">"Table1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Which will look like this in after LaTeX has created your PDF:</p>
+<p><img src="docs/btabler_basic.png" class="img-fluid"></p>
+</details>
+<details>
+<summary>
+Installation
+</summary>
+<p><code>btabler</code> can be installed in R via the following method:</p>
+<pre><code># from CTU Bern's package universe (the development version)
+install.packages("btabler", repos = "https://ctu-bern.r-universe.dev/")</code></pre>
+</details>
+</section>
+<section id="hsar---create-reproducible-hospital-service-areas-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="hsar---create-reproducible-hospital-service-areas-in-r"><code>HSAr</code> - create reproducible hospital service areas in R</h2>
+<p><img src="https://img.shields.io/badge/Language-R-red.svg" class="img-fluid"> <a href="https://github.com/aghaynes/HSAr"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid"></a> <a href="https://doi.org/10.1111/1475-6773.13275"><img src="https://img.shields.io/badge/Health%20Serv%20Res-10.1111/1475--6773.13275-apple.svg" class="img-fluid"></a> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7240760/"><img src="https://img.shields.io/badge/PubMed-PMC7240760-apple.svg" class="img-fluid"></a></p>
+<p>Hospital service areas can be useful for hospital planning, but their main use is in small area research. They are traditionally made largely by hand, by assigning each location to the hospital where most residents go and then iteratively moving locations until two main criteria are fulfilled - a HSA should not have detached islands, and at least 50% of it’s hospitalizations should stay there. The iterative steps are largely manual subjective work. As such the reproducibility of HSA creation is poor.</p>
+<p>`HSAr` provides an automated algorithm for creating HSAs by starting at the hospital and building the HSA around it until all regions in the provided shapefile are assigned to a HSA.</p>
+<p>`HSAr` was developed as part of national research programme 74, smarter health care.</p>
+<details>
+<summary>
+Example
+</summary>
+</details>
+<details>
+<summary>
+Installation
+</summary>
+<p><code>HSAr</code> can be installed in R via the following method:</p>
+<pre><code># from CTU Bern's package universe (the development version)
+install.packages("btabler", repos = "https://ctu-bern.r-universe.dev/")</code></pre>
+</details>
+</section>
+<section id="kpitools---tools-to-assist-with-risk-based-management-kpis" class="level2">
+<h2 class="anchored" data-anchor-id="kpitools---tools-to-assist-with-risk-based-management-kpis"><code>kpitools</code> - tools to assist with risk based management KPIs</h2>
+<p><img src="https://img.shields.io/badge/Language-R-red.svg" class="img-fluid"> <a href="https://github.com/CTU-Bern/kpitools"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid"></a> <a href="https://ctu-bern.github.io/kpitools/"><img src="https://img.shields.io/badge/Website-blue.svg" class="img-fluid"></a></p>
+<p>It is not enough to simply run a trial. ICH GCP E5 also requires risk based monitoring to be performed. <code>kpitools</code> provides a set of summary functions and a standardized format for presenting the key performance indicators (KPIs) that are typically defined for risk based monitoring strategies.</p>
+<details>
+<summary>
+Example
+</summary>
+<p>It could be that we believe that time of day might be an indicator of data fabrication because it’s not possible that participants are randomised at certain times of the day. The <code>fab_tod</code> function can help depict that..</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kpitools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Lade nötiges Paket: dplyr</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attache Paket: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Das folgende Objekt ist maskiert 'package:sse':
+
+    n</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Die folgenden Objekte sind maskiert von 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Die folgenden Objekte sind maskiert von 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Lade nötiges Paket: magrittr</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Lade nötiges Paket: purrr</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attache Paket: 'purrr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Das folgende Objekt ist maskiert 'package:magrittr':
+
+    set_names</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Lade nötiges Paket: rlang</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attache Paket: 'rlang'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Die folgenden Objekte sind maskiert von 'package:purrr':
+
+    %@%, as_function, flatten, flatten_chr, flatten_dbl, flatten_int,
+    flatten_lgl, flatten_raw, invoke, splice</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Das folgende Objekt ist maskiert 'package:magrittr':
+
+    set_names</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> lubridate<span class="sc">::</span><span class="fu">ymd_h</span>(<span class="st">"2020-05-01 13"</span>) <span class="sc">+</span> <span class="dv">60</span><span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="dv">0</span>, <span class="dv">3</span>),</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">mean =</span> <span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="dv">56</span>, <span class="dv">20</span>),</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">40</span>, <span class="at">prob =</span> <span class="fu">c</span>(.<span class="dv">2</span>,.<span class="dv">25</span>,.<span class="dv">4</span>,.<span class="dv">4</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">kpi</span>(<span class="st">"mean"</span>, kpi_fn_mean, <span class="at">by =</span> <span class="st">"by"</span>) <span class="sc">%&gt;%</span> plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$by</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="software_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">fab_tod</span>(<span class="st">"x"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="software_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</details>
+<details>
+<summary>
+Installation
+</summary>
+<p><code>kpitools</code> can be installed in R via the following method:</p>
+<pre><code># from CTU Bern's package universe (the development version)
+install.packages("kpitools", repos = "https://ctu-bern.r-universe.dev/")</code></pre>
+</details>
+</section>
+<section id="redcaptools---a-package-for-working-with-redcap-data-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="redcaptools---a-package-for-working-with-redcap-data-in-r"><code>redcaptools</code> - a package for working with REDCap data in R</h2>
+<p><img src="https://img.shields.io/badge/Language-R-red.svg" class="img-fluid"> <a href="https://github.com/CTU-Bern/redcaptools"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid"></a> <a href="https://ctu-bern.github.io/redcaptools/"><img src="https://img.shields.io/badge/Website-blue.svg" class="img-fluid"></a></p>
+<p>REDCap is a popular database for clinical research, used by many of the CTUs in Switzerland. One aggravation with REDCap data exports is that the data is in one file which can contain a lot of empty cells when more complicated database designs are used. <code>redcaptools</code> has tools to automatically pull the database apart into forms for easier use. Similar to <code>secuTrialR</code>, it also labels variables, and prepares date and factor variables. The function is primarily for interacting with REDCap via the Application Programming Interface (API), allowing easy scripted exports.</p>
+<details>
+<summary>
+Example
+</summary>
+<p>By supplying the API token generated by REDCap, together with the APIs URL, the <code>redcap_export_byform</code> function can be used to export all data from the database by form. Each form is returned as an element of a list.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(redcaptools)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>token <span class="ot">&lt;-</span> <span class="st">"some-long-string-provided-by-redcap"</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://link.to.redcap/api/"</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">redcap_export_byform</span>(token, url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The ‘normal’ format can be exported via the <code>redcap_export_tbl</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>record_data <span class="ot">&lt;-</span> <span class="fu">redcap_export_tbl</span>(token, url, <span class="st">"record"</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>meta <span class="ot">&lt;-</span> <span class="fu">redcap_export_tbl</span>(token, url, <span class="st">"metadata"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This function can also be used to export various other API endpoints (e.g.&nbsp;various types of metadata etc, specific forms).</p>
+<p>The data can then be formatted by using the metadata and the <code>rc_prep</code> function</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>prepped <span class="ot">&lt;-</span> <span class="fu">rc_prep</span>(dat, meta)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</details>
+<details>
+<summary>
+Installation
+</summary>
+<p><code>redcaptools</code> can be installed in R via the following method:</p>
+<pre><code># from CTU Bern's package universe (the development version)
+install.packages("redcaptools", repos = "https://ctu-bern.r-universe.dev/")</code></pre>
+</details>
+</section>
+<section id="stata_secutrial---some-stata-code-to-do-data-import-and-preparation-of-secutrial-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="stata_secutrial---some-stata-code-to-do-data-import-and-preparation-of-secutrial-datasets"><code>stata_secutrial</code> - some Stata code to do data import and preparation of secuTrial datasets</h2>
+<p><img src="https://img.shields.io/badge/Language-Stata-red.svg" class="img-fluid"> <a href="https://github.com/CTU-Bern/stata_secutrial"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid" data-fig-align="left"></a></p>
+<p>Similar to <code>secuTrialR</code> above, <code>stata_secutrial</code> provides Stata code to read and prepare secuTrial exports in Stata. It labels variables, formats date variables, add labels to categorical variables etc, saving each form as a <code>dta</code> file for your further use.</p>
+<details>
+<summary>
+Example
+</summary>
+<p>Assuming certain folders and globals have been prepared in advance (see <a href="https://github.com/CTU-Bern/stata_secutrial">GitHub</a> for further information), using <code>stata_secutrial</code> may be as simple as entering</p>
+<pre><code>do SecuTrial_zip_data_import</code></pre>
+<p>into Stata and then navigating to your download when prompted.</p>
+</details>
+<details>
+<summary>
+Installation
+</summary>
+<p>As <code>stata_secutrial</code> is just code rather than a package, you can copy the files from GitHub and use then in you project. Towards the top of the <a href="https://github.com/CTU-Bern/stata_secutrial">GitHub page</a> is a green code button. Click that and choose download ZIP. You can then unzip the files to your working directory.</p>
+</details>
+</section>
+<section id="swissasr---simplified-annual-safety-reports-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="swissasr---simplified-annual-safety-reports-with-r"><code>SwissASR</code> - simplified annual safety reports with R</h2>
+<p><img src="https://img.shields.io/badge/Language-R-red.svg" class="img-fluid"> <a href="https://github.com/CTU-Bern/SwissASR"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid"></a> <!-- [![](https://img.shields.io/badge/Website-blue.svg)](https://ctu-bern.github.io/SwissASR/) --></p>
+<p>Ethics and regulators often require annual safety reports. <code>SwissASR</code> provides a relatively easy way to produce annual safety reports according to the current template available on the SwissMedic(?) website. The function returns a word file with the safety data completed based on the data provided to it. Minimal additional details should then be added by the study team or principal investigator.</p>
+<details>
+<summary>
+Example
+</summary>
+</details>
+<details>
+<summary>
+Installation
+</summary>
+<p><code>SwissASR</code> can be installed in R via the following method:</p>
+<pre><code># from CTU Bern's package universe (the development version)
+install.packages("SwissASR", repos = "https://ctu-bern.r-universe.dev/")</code></pre>
+</details>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">CC-BY SCTO Statistics and Methodology</div>
+  </div>
+</footer>
+
+
+
+</body></html>

@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Statistics and Methodology - tools and support - Make a baseline table</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./docs/SCTO_Platforms.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<link href="site_libs/tabwid-1.0.0/tabwid.css" rel="stylesheet">
+<link href="site_libs/tabwid-1.0.0/scrool.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <img src="./docs/SCTO_Platforms.png" alt="">
+    <span class="navbar-title">Statistics and Methodology - tools and support</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Make a baseline table</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">For clinicians</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DataSharing.html" class="sidebar-item-text sidebar-link">Data sharing</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ReportingGuidelines.html" class="sidebar-item-text sidebar-link">Reporting guidelines</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./SampleSizeCalculation.html" class="sidebar-item-text sidebar-link">Sample size calculation</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">For programmers</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./baselinetables.html" class="sidebar-item-text sidebar-link active">Make a baseline table</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./software.html" class="sidebar-item-text sidebar-link">Software packages</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">About</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./courses.html" class="sidebar-item-text sidebar-link">Courses</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./blog/index.html" class="sidebar-item-text sidebar-link">Blog</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
+  <li><a href="#main-important-considerations" id="toc-main-important-considerations" class="nav-link" data-scroll-target="#main-important-considerations">Main important considerations</a></li>
+  <li><a href="#how-to-program-a-baseline-table" id="toc-how-to-program-a-baseline-table" class="nav-link" data-scroll-target="#how-to-program-a-baseline-table">How to program a baseline table</a>
+  <ul class="collapse">
+  <li><a href="#in-r" id="toc-in-r" class="nav-link" data-scroll-target="#in-r">In R</a>
+  <ul class="collapse">
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#using-gtsummary" id="toc-using-gtsummary" class="nav-link" data-scroll-target="#using-gtsummary">Using gtsummary</a></li>
+  <li><a href="#using-atable" id="toc-using-atable" class="nav-link" data-scroll-target="#using-atable">Using atable</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#stata-btable" id="toc-stata-btable" class="nav-link" data-scroll-target="#stata-btable">Stata: btable</a>
+  <ul class="collapse">
+  <li><a href="#instalation" id="toc-instalation" class="nav-link" data-scroll-target="#instalation">Instalation</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  </ul></li>
+  <li><a href="#quiz" id="toc-quiz" class="nav-link" data-scroll-target="#quiz">Quiz</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Make a baseline table</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="background" class="level1">
+<h1>Background</h1>
+<p>Epidemiologic and clinical research papers often describe the study sample in a first, baseline table. Providing a baseline table is one of the recommendations of the CONSORT (<span class="citation" data-cites="MOHER201228">Moher et al. (<a href="#ref-MOHER201228" role="doc-biblioref">2012</a>)</span>) and STROBE (<span class="citation" data-cites="VONELM20071453">von Elm et al. (<a href="#ref-VONELM20071453" role="doc-biblioref">2007</a>)</span>) statements. If well-executed, it provides a rapid, objective, and coherent grasp of the data and can illuminate potential threats to internal and external validity (<span class="citation" data-cites="HAYESLARSON2019125">Hayes-Larson et al. (<a href="#ref-HAYESLARSON2019125" role="doc-biblioref">2019</a>)</span>).</p>
+</section>
+<section id="main-important-considerations" class="level1">
+<h1>Main important considerations</h1>
+<p>Baseline tables can be presented in different ways, but certain features are common and some recommendations need be followed. In the next paragraph and figure we provide an overview of the main important considerations, for more detailed review and guidelines see (e.g. <span class="citation" data-cites="MOHER201228">Moher et al. (<a href="#ref-MOHER201228" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="HAYESLARSON2019125">Hayes-Larson et al. (<a href="#ref-HAYESLARSON2019125" role="doc-biblioref">2019</a>)</span>).</p>
+<p>Characteristics are generally presented on the left as rows and groupings at the top as columns. In RCTs, groups are defined by treatment allocation. If appropriated, the overall population’s characteristics may be presented in a separate column. Characteristics should include information about the study participants (e.g., demographic, clinical, social) and information on exposures and any particular characteristics that may be predictive of the studied outcome (e.g., health status at baseline). Inside each cell, descriptive statistics are typically given as frequency and percentage for categorical variables and mean (standard deviation) or median (25th-75th percentile or minimum-maximum) for continuous variables. The type of statistical measurement used should be indicated (e.g., together with the characteristic, in a footnote). The number of participants with missing data should be reported for each variable of interest.</p>
+<p><strong>Important note: Baseline table are descriptive tables, significance tests and inferential measures (e.g.&nbsp;standard errors and confidence intervals) should be avoided in observational studies as well as in RCTs (see items 14a and 15a and of the STROBE and CONSORT statements, respectively, <span class="citation" data-cites="Vandenbroucke_strobe">Vandenbroucke et al. (<a href="#ref-Vandenbroucke_strobe" role="doc-biblioref">2007</a>)</span> <span class="citation" data-cites="MOHER201228">Moher et al. (<a href="#ref-MOHER201228" role="doc-biblioref">2012</a>)</span>)</strong>. In RCTs, testing for differences between randomized groups is irrelevant because baseline differences are, by definition, caused by chance.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="docs/bl_fig1.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Basic baseline structure and analysis-specific considerations affecting columns, rows, and cells. Figure from <span class="citation" data-cites="HAYESLARSON2019125">Hayes-Larson et al. (<a href="#ref-HAYESLARSON2019125" role="doc-biblioref">2019</a>)</span></figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="how-to-program-a-baseline-table" class="level1">
+<h1>How to program a baseline table</h1>
+<p>Many developers have published tools for building baselines tables. When choosing one please consider the flexibility of the tool. Indeed, requirements for the contents and formatting of baseline tables may vary depending on the project, the authors, the target journal, etc. Here we present few (very flexible) options for R and stata.</p>
+<section id="in-r" class="level2">
+<h2 class="anchored" data-anchor-id="in-r">In R</h2>
+<section id="data" class="level3">
+<h3 class="anchored" data-anchor-id="data">Data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>am_f <span class="ot">&lt;-</span> <span class="fu">factor</span>(mtcars<span class="sc">$</span>am, <span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="fu">c</span>(<span class="st">"Manual"</span>, <span class="st">"Automatic"</span>)) </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>vs_f <span class="ot">&lt;-</span> <span class="fu">factor</span>(mtcars<span class="sc">$</span>vs, <span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="fu">c</span>(<span class="st">"V"</span>, <span class="st">"Straight"</span>)) </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span>  <span class="fu">select</span>(mpg, cyl, am_f,vs_f)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Hmisc<span class="sc">::</span><span class="fu">label</span>(d<span class="sc">$</span>mpg) <span class="ot">&lt;-</span> <span class="st">"Miles per gallon"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Hmisc<span class="sc">::</span><span class="fu">label</span>(d<span class="sc">$</span>cyl) <span class="ot">&lt;-</span> <span class="st">"Cylinders"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Hmisc<span class="sc">::</span><span class="fu">label</span>(d<span class="sc">$</span>am_f) <span class="ot">&lt;-</span> <span class="st">"Transmission"</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Hmisc<span class="sc">::</span><span class="fu">label</span>(d<span class="sc">$</span>vs_f) <span class="ot">&lt;-</span> <span class="st">"Engine"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="using-gtsummary" class="level3">
+<h3 class="anchored" data-anchor-id="using-gtsummary">Using gtsummary</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Make a table stratify the table by transmission</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>d <span class="sc">%&gt;%</span>  <span class="fu">tbl_summary</span>(<span class="at">by =</span> am_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="aqlnfthcld" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#aqlnfthcld .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#aqlnfthcld .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#aqlnfthcld .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#aqlnfthcld .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#aqlnfthcld .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#aqlnfthcld .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#aqlnfthcld .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#aqlnfthcld .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#aqlnfthcld .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#aqlnfthcld .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#aqlnfthcld .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#aqlnfthcld .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#aqlnfthcld .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#aqlnfthcld .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#aqlnfthcld .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#aqlnfthcld .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#aqlnfthcld .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#aqlnfthcld .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#aqlnfthcld .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#aqlnfthcld .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#aqlnfthcld .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#aqlnfthcld .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#aqlnfthcld .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#aqlnfthcld .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#aqlnfthcld .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#aqlnfthcld .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#aqlnfthcld .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#aqlnfthcld .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#aqlnfthcld .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#aqlnfthcld .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#aqlnfthcld .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#aqlnfthcld .gt_left {
+  text-align: left;
+}
+
+#aqlnfthcld .gt_center {
+  text-align: center;
+}
+
+#aqlnfthcld .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#aqlnfthcld .gt_font_normal {
+  font-weight: normal;
+}
+
+#aqlnfthcld .gt_font_bold {
+  font-weight: bold;
+}
+
+#aqlnfthcld .gt_font_italic {
+  font-style: italic;
+}
+
+#aqlnfthcld .gt_super {
+  font-size: 65%;
+}
+
+#aqlnfthcld .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#aqlnfthcld .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#aqlnfthcld .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#aqlnfthcld .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#aqlnfthcld .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#aqlnfthcld .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#aqlnfthcld .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col"><strong>Characteristic</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col"><strong>Manual</strong>, N = 19<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col"><strong>Automatic</strong>, N = 13<sup class="gt_footnote_marks">1</sup></th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">Miles per gallon</td>
+<td class="gt_row gt_center">17.3 (14.9, 19.2)</td>
+<td class="gt_row gt_center">22.8 (21.0, 30.4)</td></tr>
+    <tr><td class="gt_row gt_left">Cylinders</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">4</td>
+<td class="gt_row gt_center">3 (16%)</td>
+<td class="gt_row gt_center">8 (62%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">6</td>
+<td class="gt_row gt_center">4 (21%)</td>
+<td class="gt_row gt_center">3 (23%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">8</td>
+<td class="gt_row gt_center">12 (63%)</td>
+<td class="gt_row gt_center">2 (15%)</td></tr>
+    <tr><td class="gt_row gt_left">Engine</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">V</td>
+<td class="gt_row gt_center">12 (63%)</td>
+<td class="gt_row gt_center">6 (46%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Straight</td>
+<td class="gt_row gt_center">7 (37%)</td>
+<td class="gt_row gt_center">7 (54%)</td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="3"><sup class="gt_footnote_marks">1</sup> Median (IQR); n (%)</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+</div>
+</div>
+
+<!-- <img src="Table/table1a.png" align="middle" width="60%"/> -->
+<p>This is the basic usage; defaults options may be customized.</p>
+<ul>
+<li>Variable types are automatically detected so that appropriate descriptive statistics are calculated.</li>
+<li>Label attributes from the data set are automatically printed.</li>
+<li>Missing values are listed as “Unknown” in the table.</li>
+<li>Variable levels are indented and footnotes are added.</li>
+</ul>
+<p>Once produced gtsummary tables can be converted to your favorite format (e.g.&nbsp;html/pdf/word). For more information see <a href="https://www.danieldsjoberg.com/gtsummary/articles/rmarkdown.html">here</a>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># declare cylinders as a continuous variable, for this variable calculate the mean and sd value, add an overall column, change the missing text</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>d <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tbl_summary</span>(<span class="at">by =</span> am_f, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">type =</span> <span class="fu">list</span>(cyl <span class="sc">~</span> <span class="st">'continuous'</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">statistic =</span> <span class="fu">list</span>(cyl <span class="sc">~</span> <span class="st">"{mean} ({sd})"</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">missing_text =</span> <span class="st">"Missing"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">add_overall</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="sgfyvlyrxa" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#sgfyvlyrxa .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#sgfyvlyrxa .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sgfyvlyrxa .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#sgfyvlyrxa .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#sgfyvlyrxa .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sgfyvlyrxa .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sgfyvlyrxa .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#sgfyvlyrxa .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#sgfyvlyrxa .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#sgfyvlyrxa .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#sgfyvlyrxa .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#sgfyvlyrxa .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#sgfyvlyrxa .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#sgfyvlyrxa .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#sgfyvlyrxa .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#sgfyvlyrxa .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#sgfyvlyrxa .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sgfyvlyrxa .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#sgfyvlyrxa .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#sgfyvlyrxa .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sgfyvlyrxa .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#sgfyvlyrxa .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#sgfyvlyrxa .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sgfyvlyrxa .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sgfyvlyrxa .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#sgfyvlyrxa .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#sgfyvlyrxa .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sgfyvlyrxa .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sgfyvlyrxa .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sgfyvlyrxa .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sgfyvlyrxa .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sgfyvlyrxa .gt_left {
+  text-align: left;
+}
+
+#sgfyvlyrxa .gt_center {
+  text-align: center;
+}
+
+#sgfyvlyrxa .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#sgfyvlyrxa .gt_font_normal {
+  font-weight: normal;
+}
+
+#sgfyvlyrxa .gt_font_bold {
+  font-weight: bold;
+}
+
+#sgfyvlyrxa .gt_font_italic {
+  font-style: italic;
+}
+
+#sgfyvlyrxa .gt_super {
+  font-size: 65%;
+}
+
+#sgfyvlyrxa .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#sgfyvlyrxa .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#sgfyvlyrxa .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#sgfyvlyrxa .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#sgfyvlyrxa .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#sgfyvlyrxa .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#sgfyvlyrxa .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col"><strong>Characteristic</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col"><strong>Overall</strong>, N = 32<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col"><strong>Manual</strong>, N = 19<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col"><strong>Automatic</strong>, N = 13<sup class="gt_footnote_marks">1</sup></th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">Miles per gallon</td>
+<td class="gt_row gt_center">19.2 (15.4, 22.8)</td>
+<td class="gt_row gt_center">17.3 (14.9, 19.2)</td>
+<td class="gt_row gt_center">22.8 (21.0, 30.4)</td></tr>
+    <tr><td class="gt_row gt_left">Cylinders</td>
+<td class="gt_row gt_center">6.19 (1.79)</td>
+<td class="gt_row gt_center">6.95 (1.54)</td>
+<td class="gt_row gt_center">5.08 (1.55)</td></tr>
+    <tr><td class="gt_row gt_left">Engine</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">V</td>
+<td class="gt_row gt_center">18 (56%)</td>
+<td class="gt_row gt_center">12 (63%)</td>
+<td class="gt_row gt_center">6 (46%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Straight</td>
+<td class="gt_row gt_center">14 (44%)</td>
+<td class="gt_row gt_center">7 (37%)</td>
+<td class="gt_row gt_center">7 (54%)</td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="4"><sup class="gt_footnote_marks">1</sup> Median (IQR); Mean (SD); n (%)</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+</div>
+</div>
+
+<!-- <img src="Table/table1b.png" align="center" width="80%"/> -->
+<!-- <img src="Table/table1c.png" align="center" width="90%"/> -->
+<p>As before, the function detects variable type and uses an appropriate statistical test. If needed defaults may be customized.</p>
+<section id="additional-information" class="level4">
+<h4 class="anchored" data-anchor-id="additional-information">Additional information</h4>
+<p>For more detailed tutorial and additional options see the very complete <a href="https://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html">vignette</a> and <a href="https://www.danieldsjoberg.com/gtsummary/index.html">website</a></p>
+</section>
+</section>
+<section id="using-atable" class="level3">
+<h3 class="anchored" data-anchor-id="using-atable">Using atable</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(atable)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>table1<span class="ot">=</span><span class="fu">atable</span>(d,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">target_cols =</span> <span class="fu">c</span>(<span class="st">"mpg"</span> , <span class="st">"cyl"</span> , <span class="st">"vs_f"</span>),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">group_col =</span> <span class="st">"am_f"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">format_to=</span><span class="st">"Word"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>or similar using the formula interface</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>table1<span class="ot">=</span><span class="fu">atable</span>(mpg<span class="sc">+</span>cyl<span class="sc">+</span> vs_f <span class="sc">~</span> am_f, d,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">format_to=</span><span class="st">"Word"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>table1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>                       Group    Manual Automatic      p stat   Effect Size (CI)
+1              Observations                                                    
+2           &amp;emsp;   &amp;emsp;         19        13   &lt;NA&gt; &lt;NA&gt;               &lt;NA&gt;
+3  Miles per gallon  &amp;emsp;                                                    
+4          &amp;emsp;  Mean (SD)  17 (3.8)  24 (6.2) 0.0019 0.64 -1.5 (-2.3; -0.65)
+5    &amp;emsp;  valid (missing)    19 (0)    13 (0)   &lt;NA&gt; &lt;NA&gt;               &lt;NA&gt;
+6                 Cylinders                                                    
+7          &amp;emsp;  Mean (SD) 6.9 (1.5) 5.1 (1.6)  0.013 0.48      1.2 (0.41; 2)
+8    &amp;emsp;  valid (missing)    19 (0)    13 (0)   &lt;NA&gt; &lt;NA&gt;               &lt;NA&gt;
+9                    Engine                                                    
+10                 &amp;emsp;  V  63% (12)   46% (6)   0.56 0.35       2 (0.38; 11)
+11          &amp;emsp;  Straight   37% (7)   54% (7)   &lt;NA&gt; &lt;NA&gt;               &lt;NA&gt;
+12           &amp;emsp;  missing    0% (0)    0% (0)   &lt;NA&gt; &lt;NA&gt;               &lt;NA&gt;</code></pre>
+</div>
+</div>
+<p>By default atable is printing p-values, test statistics as well as effect sizes with a 95% confidence interval. As stated above baseline tables are descriptive tables and should not contain this type of information. Don’t forget to remove the columns.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>table1<span class="ot">=</span>table1<span class="sc">%&gt;%</span><span class="fu">select</span>(<span class="sc">-</span><span class="st">"p"</span>,<span class="sc">-</span><span class="st">"stat"</span>,<span class="sc">-</span><span class="st">"Effect Size (CI)"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>table1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   Group    Manual Automatic
+1          Observations                     
+2                               19        13
+3  Miles per gallon                         
+4              Mean (SD)  17 (3.8)  24 (6.2)
+5        valid (missing)    19 (0)    13 (0)
+6             Cylinders                     
+7              Mean (SD) 6.9 (1.5) 5.1 (1.6)
+8        valid (missing)    19 (0)    13 (0)
+9                Engine                     
+10                     V  63% (12)   46% (6)
+11              Straight   37% (7)   54% (7)
+12               missing    0% (0)    0% (0)</code></pre>
+</div>
+</div>
+
+<!-- <img src="Table/table2.png" align="center" width="60%"/> -->
+<p>The table may also be split in strata. For example, we can decide to present separately the characteristics of car with a “V” or a “Straight” engine.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>table1<span class="ot">=</span><span class="fu">atable</span>(mpg<span class="sc">+</span>cyl  <span class="sc">~</span> am_f<span class="sc">|</span>vs_f , d,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">format_to=</span><span class="st">"Word"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>table1<span class="ot">=</span>table1<span class="sc">%&gt;%</span><span class="fu">select</span>(<span class="sc">-</span><span class="st">"p"</span>,<span class="sc">-</span><span class="st">"stat"</span>,<span class="sc">-</span><span class="st">"Effect Size (CI)"</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>table1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<!-- <img src="Table/table2a.png" align="center" width="60%"/> -->
+<p>As gtsummary, atable may be exported in different formats (e.g.&nbsp;LATEX, HTML, Word) and it is intended that some parts of atable can be altered by the user. For example the variable type may defined otherwise (for more details see <span class="citation" data-cites="Strbel2019atableCT">Ströbel (<a href="#ref-Strbel2019atableCT" role="doc-biblioref">2019</a>)</span> as well as the package <a href="https://cran.r-project.org/web/packages/atable/vignettes/atable_usage.pdf">vignette</a>. An other informative vignette can be found by typing the following command in R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vignette</span>(<span class="st">"modifying"</span>, <span class="at">package =</span> <span class="st">"atable"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="stata-btable" class="level1">
+<h1>Stata: btable</h1>
+<p>The table is constructed in a two-step approach using two functions: btable() produces an unformatted, raw table, which is then formatted by btable_format to produce a final, publication-ready table. By default, the raw table contains all summary measures, and—if there are two groups—effect measures and p-values. Optionally, the table can be restricted to effect measures of choice and a number of alternative calculations for confidence intervals are available.</p>
+<section id="instalation" class="level2">
+<h2 class="anchored" data-anchor-id="instalation">Instalation</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#In order to install btable from github the github-package is required:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>net install github, <span class="fu">from</span>(<span class="st">"https://haghish.github.io/github/"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#You can then install the development version of btable with:</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>github install CTU<span class="sc">-</span>Bern<span class="sc">/</span>btable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load example dataset</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>sysuse auto2</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># generate table</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>btable price mpg rep78 headroom, <span class="fu">by</span>(foreign) <span class="fu">saving</span>(<span class="st">"excars"</span>) <span class="fu">denom</span>(nonmiss)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># format table (default formatting, removing the effect measures and P-values)</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>btable_format using <span class="st">"excars"</span>, clear <span class="fu">drop</span>(effect test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<!-- <img src="Table/btabl1.png" align="center" width="90%"/> -->
+<p>The formatting option can be modified. For example we can decide we may want to</p>
+<ul>
+<li>present the median and lower and upper quartiles instead of the mean and standard deviation</li>
+<li>remove the overall column, and the information column</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#If we want to display median [lq, up] for all the continuous variables</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>btable_format using <span class="st">"excars"</span>, clear <span class="fu">descriptive</span>(conti median [lq, uq]) <span class="fu">drop</span>(effect test total info)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">#If we want to display mean (sd) for the mpg variable and median [lq, up] for all the other continuous variables</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>btable_format using <span class="st">"excars"</span>, clear <span class="fu">desc</span>(conti median [lq, uq] mpg <span class="fu">mean</span> (sd)) <span class="fu">drop</span>(effect test total info)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="tabwid"><style>.cl-5659ce5c{}.cl-565175c2{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-56518cec{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5651bfbe{width:190.5pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5651bfc8{width:119pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5651bfc9{width:119pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5651bfd2{width:190.5pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5651bfd3{width:190.5pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5651bfdc{width:119pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5651bfdd{width:119pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5651bfe6{width:190.5pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-5659ce5c">
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-5651bfdd"><p class="cl-56518cec"><span class="cl-565175c2"> </span></p></td><td class="cl-5651bfe6"><p class="cl-56518cec"><span class="cl-565175c2">Domestic (N = 52)</span></p></td><td class="cl-5651bfe6"><p class="cl-56518cec"><span class="cl-565175c2">Foreign (N = 22)</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-5651bfc8"><p class="cl-56518cec"><span class="cl-565175c2"></span></p></td><td class="cl-5651bfbe"><p class="cl-56518cec"><span class="cl-565175c2">mean (sd), median [lq, uq] or n (%)</span></p></td><td class="cl-5651bfbe"><p class="cl-56518cec"><span class="cl-565175c2">mean (sd), median [lq, uq] or n (%)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5651bfdc"><p class="cl-56518cec"><span class="cl-565175c2">Price</span></p></td><td class="cl-5651bfd3"><p class="cl-56518cec"><span class="cl-565175c2">4783 [4184, 6234]</span></p></td><td class="cl-5651bfd3"><p class="cl-56518cec"><span class="cl-565175c2">5759 [4499, 7140]</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5651bfc8"><p class="cl-56518cec"><span class="cl-565175c2">Mileage (mpg)</span></p></td><td class="cl-5651bfbe"><p class="cl-56518cec"><span class="cl-565175c2">20 (4.7)</span></p></td><td class="cl-5651bfbe"><p class="cl-56518cec"><span class="cl-565175c2">25 (6.6)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5651bfdc"><p class="cl-56518cec"><span class="cl-565175c2">Repair Record 1978</span></p></td><td class="cl-5651bfd3"><p class="cl-56518cec"><span class="cl-565175c2"></span></p></td><td class="cl-5651bfd3"><p class="cl-56518cec"><span class="cl-565175c2"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5651bfc8"><p class="cl-56518cec"><span class="cl-565175c2">Poor</span></p></td><td class="cl-5651bfbe"><p class="cl-56518cec"><span class="cl-565175c2">2 (4.2%)</span></p></td><td class="cl-5651bfbe"><p class="cl-56518cec"><span class="cl-565175c2">0 (0.00%)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5651bfc8"><p class="cl-56518cec"><span class="cl-565175c2">Fair</span></p></td><td class="cl-5651bfbe"><p class="cl-56518cec"><span class="cl-565175c2">8 (17%)</span></p></td><td class="cl-5651bfbe"><p class="cl-56518cec"><span class="cl-565175c2">0 (0.00%)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5651bfc8"><p class="cl-56518cec"><span class="cl-565175c2">Average</span></p></td><td class="cl-5651bfbe"><p class="cl-56518cec"><span class="cl-565175c2">27 (56%)</span></p></td><td class="cl-5651bfbe"><p class="cl-56518cec"><span class="cl-565175c2">3 (14%)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5651bfc8"><p class="cl-56518cec"><span class="cl-565175c2">Good</span></p></td><td class="cl-5651bfbe"><p class="cl-56518cec"><span class="cl-565175c2">9 (19%)</span></p></td><td class="cl-5651bfbe"><p class="cl-56518cec"><span class="cl-565175c2">9 (43%)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5651bfc8"><p class="cl-56518cec"><span class="cl-565175c2">Excellent</span></p></td><td class="cl-5651bfbe"><p class="cl-56518cec"><span class="cl-565175c2">2 (4.2%)</span></p></td><td class="cl-5651bfbe"><p class="cl-56518cec"><span class="cl-565175c2">9 (43%)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5651bfc9"><p class="cl-56518cec"><span class="cl-565175c2">Headroom (in.)</span></p></td><td class="cl-5651bfd2"><p class="cl-56518cec"><span class="cl-565175c2">3.5 [2.3, 4.0]</span></p></td><td class="cl-5651bfd2"><p class="cl-56518cec"><span class="cl-565175c2">2.5 [2.5, 3.0]</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+
+<!-- <img src="Table/btabl2.png" align="center" width="80%"/> -->
+</section>
+</section>
+<section id="quiz" class="level1">
+<h1>Quiz</h1>
+<p>Here is a short quiz to check your understanding…</p>
+<section id="question-1" class="level6">
+<h6 class="anchored" data-anchor-id="question-1">Question 1:</h6>
+<p>Which summary statistics can I give to describe continuous and categorical variables?</p>
+<details>
+<summary>
+Answer
+</summary>
+<p>Descriptive statistics are typically given as frequency (percentage) for categorical or binary variables, mean and (standard deviation) for continuous normal variables and median (25th-75th percentile or minimum-maximum) for non-normal continuous variables.</p>
+</details>
+</section>
+</section>
+<section id="references" class="level1">
+
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-HAYESLARSON2019125" class="csl-entry" role="doc-biblioentry">
+Hayes-Larson, Eleanor, Katrina L. Kezios, Stephen J. Mooney, and Gina Lovasi. 2019. <span>“Who Is in This Study, Anyway? Guidelines for a Useful Table 1.”</span> <em>Journal of Clinical Epidemiology</em> 114: 125–32. https://doi.org/<a href="https://doi.org/10.1016/j.jclinepi.2019.06.011">https://doi.org/10.1016/j.jclinepi.2019.06.011</a>.
+</div>
+<div id="ref-MOHER201228" class="csl-entry" role="doc-biblioentry">
+Moher, David, Sally Hopewell, Kenneth F. Schulz, Victor Montori, Peter C. Gøtzsche, P. J. Devereaux, Diana Elbourne, Matthias Egger, and Douglas G. Altman. 2012. <span>“CONSORT 2010 Explanation and Elaboration: Updated Guidelines for Reporting Parallel Group Randomised Trials.”</span> <em>International Journal of Surgery</em> 10 (1): 28–55. https://doi.org/<a href="https://doi.org/10.1016/j.ijsu.2011.10.001">https://doi.org/10.1016/j.ijsu.2011.10.001</a>.
+</div>
+<div id="ref-Strbel2019atableCT" class="csl-entry" role="doc-biblioentry">
+Ströbel, Armin Michael. 2019. <span>“Atable: Create Tables for Clinical Trial Reports.”</span> <em>R J.</em> 11: 137.
+</div>
+<div id="ref-Vandenbroucke_strobe" class="csl-entry" role="doc-biblioentry">
+Vandenbroucke, Jan P., Erik von Elm, Douglas G. Altman, Peter C. Gotzsche, Cynthia D. Mulrow, Stuart J. Pocock, Charles Poole, James J. Schlesselman, Matthias Egger, and STROBE Initiative. 2007. <span>“Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Explanation and Elaboration.”</span> <em>EPIDEMIOLOGY</em> 18 (6): 805–35. <a href="https://doi.org/10.1097/EDE.0b013e3181577511">https://doi.org/10.1097/EDE.0b013e3181577511</a>.
+</div>
+<div id="ref-VONELM20071453" class="csl-entry" role="doc-biblioentry">
+von Elm, Erik, Douglas G Altman, Matthias Egger, Stuart J Pocock, Peter C Gøtzsche, and Jan P Vandenbroucke. 2007. <span>“The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies.”</span> <em>The Lancet</em> 370 (9596): 1453–57. https://doi.org/<a href="https://doi.org/10.1016/S0140-6736(07)61602-X">https://doi.org/10.1016/S0140-6736(07)61602-X</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">CC-BY SCTO Statistics and Methodology</div>
+  </div>
+</footer>
+
+
+
+</body></html>
