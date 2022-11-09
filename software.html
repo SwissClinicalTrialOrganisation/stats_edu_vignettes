@@ -141,7 +141,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">Home</a>
+    <a class="nav-link active" href="./index.html" aria-current="page">Home</a>
   </li>  
 </ul>
               <div class="quarto-toggle-container">
@@ -171,6 +171,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Home</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ReportingGuidelines.html" class="sidebar-item-text sidebar-link">Reporting guidelines</a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">For clinicians</a>
@@ -182,11 +192,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./DataSharing.html" class="sidebar-item-text sidebar-link">Data sharing</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./ReportingGuidelines.html" class="sidebar-item-text sidebar-link">Reporting guidelines</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -216,11 +221,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Vignettes</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">About</a>
+  <a href="./vignettes.html" class="sidebar-item-text sidebar-link">Overview</a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./SampleSizeCalculation.html" class="sidebar-item-text sidebar-link">Sample size calculation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./baselinetables.html" class="sidebar-item-text sidebar-link">Make a baseline table</a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./courses.html" class="sidebar-item-text sidebar-link">Courses</a>
@@ -228,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./blog/index.html" class="sidebar-item-text sidebar-link">Blog</a>
+  <a href="./software.html" class="sidebar-item-text sidebar-link">Software packages</a>
   </div>
 </li>
     </ul>
@@ -243,6 +268,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#scto-funded-packages" id="toc-scto-funded-packages" class="nav-link active" data-scroll-target="#scto-funded-packages">SCTO funded packages</a>
   <ul class="collapse">
   <li><a href="#presize---precision-based-sample-size-estimation" id="toc-presize---precision-based-sample-size-estimation" class="nav-link" data-scroll-target="#presize---precision-based-sample-size-estimation"><code>presize</code> - precision based sample size estimation</a></li>
+  <li><a href="#redcaptools---a-package-for-working-with-redcap-data-in-r" id="toc-redcaptools---a-package-for-working-with-redcap-data-in-r" class="nav-link" data-scroll-target="#redcaptools---a-package-for-working-with-redcap-data-in-r"><code>redcaptools</code> - a package for working with REDCap data in R</a></li>
+  <li><a href="#selcorr---post-selection-inference-for-generalized-linear-models" id="toc-selcorr---post-selection-inference-for-generalized-linear-models" class="nav-link" data-scroll-target="#selcorr---post-selection-inference-for-generalized-linear-models"><code>selcorr</code> - post-selection inference for generalized linear models</a></li>
   <li><a href="#sse---sample-size-estimation" id="toc-sse---sample-size-estimation" class="nav-link" data-scroll-target="#sse---sample-size-estimation"><code>sse</code> - sample size estimation</a></li>
   <li><a href="#sts_graph_landmark---landmark-analysis-graphs" id="toc-sts_graph_landmark---landmark-analysis-graphs" class="nav-link" data-scroll-target="#sts_graph_landmark---landmark-analysis-graphs"><code>sts_graph_landmark</code> - landmark analysis graphs</a></li>
   <li><a href="#secutrialr---import-secutrial-datasets-to-r" id="toc-secutrialr---import-secutrial-datasets-to-r" class="nav-link" data-scroll-target="#secutrialr---import-secutrial-datasets-to-r"><code>secuTrialR</code> - import secuTrial datasets to R</a></li>
@@ -254,7 +281,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#btabler---format-tables-for-latex-reports" id="toc-btabler---format-tables-for-latex-reports" class="nav-link" data-scroll-target="#btabler---format-tables-for-latex-reports"><code>btabler</code> - format tables for LaTeX reports</a></li>
   <li><a href="#hsar---create-reproducible-hospital-service-areas-in-r" id="toc-hsar---create-reproducible-hospital-service-areas-in-r" class="nav-link" data-scroll-target="#hsar---create-reproducible-hospital-service-areas-in-r"><code>HSAr</code> - create reproducible hospital service areas in R</a></li>
   <li><a href="#kpitools---tools-to-assist-with-risk-based-management-kpis" id="toc-kpitools---tools-to-assist-with-risk-based-management-kpis" class="nav-link" data-scroll-target="#kpitools---tools-to-assist-with-risk-based-management-kpis"><code>kpitools</code> - tools to assist with risk based management KPIs</a></li>
-  <li><a href="#redcaptools---a-package-for-working-with-redcap-data-in-r" id="toc-redcaptools---a-package-for-working-with-redcap-data-in-r" class="nav-link" data-scroll-target="#redcaptools---a-package-for-working-with-redcap-data-in-r"><code>redcaptools</code> - a package for working with REDCap data in R</a></li>
   <li><a href="#stata_secutrial---some-stata-code-to-do-data-import-and-preparation-of-secutrial-datasets" id="toc-stata_secutrial---some-stata-code-to-do-data-import-and-preparation-of-secutrial-datasets" class="nav-link" data-scroll-target="#stata_secutrial---some-stata-code-to-do-data-import-and-preparation-of-secutrial-datasets"><code>stata_secutrial</code> - some Stata code to do data import and preparation of secuTrial datasets</a></li>
   <li><a href="#swissasr---simplified-annual-safety-reports-with-r" id="toc-swissasr---simplified-annual-safety-reports-with-r" class="nav-link" data-scroll-target="#swissasr---simplified-annual-safety-reports-with-r"><code>SwissASR</code> - simplified annual safety reports with R</a></li>
   </ul></li>
@@ -338,50 +364,144 @@ install.packages("presize")
 install.packages("presize", repos = "https://ctu-bern.r-universe.dev/")</code></pre>
 </details>
 </section>
-<section id="sse---sample-size-estimation" class="level2">
-<h2 class="anchored" data-anchor-id="sse---sample-size-estimation"><code>sse</code> - sample size estimation</h2>
-<p><img src="https://img.shields.io/badge/Language-R-red.svg" class="img-fluid"> <a href="https://github.com/thofab/sse"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid"></a> <a href="http://r-forge.r-project.org/projects/power/"><img src="https://img.shields.io/badge/R%20forge-grey.svg" class="img-fluid"></a> <a href="https://cran.r-project.org/package=sse"><img src="https://www.r-pkg.org/badges/version/sse?color=green.png" class="img-fluid"></a></p>
-<p><code>sse</code> is another R package for sample size calculation that has been in use at CTU Basel for many years. It’s approach is very general, allowing a wide range of scenarios to be assessed rapidly.</p>
+<section id="redcaptools---a-package-for-working-with-redcap-data-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="redcaptools---a-package-for-working-with-redcap-data-in-r"><code>redcaptools</code> - a package for working with REDCap data in R</h2>
+<p><img src="https://img.shields.io/badge/Language-R-red.svg" class="img-fluid"> <a href="https://github.com/CTU-Bern/redcaptools"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid"></a> <a href="https://ctu-bern.github.io/redcaptools/"><img src="https://img.shields.io/badge/Website-blue.svg" class="img-fluid"></a></p>
+<p>REDCap is a popular database for clinical research, used by many of the CTUs in Switzerland. One aggravation with REDCap data exports is that the data is in one file which can contain a lot of empty cells when more complicated database designs are used. <code>redcaptools</code> has tools to automatically pull the database apart into forms for easier use. Similar to <code>secuTrialR</code>, it also labels variables, and prepares date and factor variables. The function is primarily for interacting with REDCap via the Application Programming Interface (API), allowing easy scripted exports.</p>
 <details>
 <summary>
 Example
 </summary>
-<p>If we want to find the sample size for comparing two means, using a range of standard deviations we can do the following.</p>
+<p>By supplying the API token generated by REDCap, together with the APIs URL, the <code>redcap_export_byform</code> function can be used to export all data from the database by form. Each form is returned as an element of a list.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(redcaptools)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>token <span class="ot">&lt;-</span> <span class="st">"some-long-string-provided-by-redcap"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://link.to.redcap/api/"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">redcap_export_byform</span>(token, url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The ‘normal’ format can be exported via the <code>redcap_export_tbl</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>record_data <span class="ot">&lt;-</span> <span class="fu">redcap_export_tbl</span>(token, url, <span class="st">"record"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>meta <span class="ot">&lt;-</span> <span class="fu">redcap_export_tbl</span>(token, url, <span class="st">"metadata"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This function can also be used to export various other API endpoints (e.g.&nbsp;various types of metadata etc, specific forms).</p>
+<p>The data can then be formatted by using the metadata and the <code>rc_prep</code> function</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>prepped <span class="ot">&lt;-</span> <span class="fu">rc_prep</span>(dat, meta)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</details>
+<details>
+<summary>
+Installation
+</summary>
+<p><code>redcaptools</code> can be installed in R via the following methods:</p>
+<pre><code># from CTU Bern's package universe (the development version)
+install.packages("redcaptools", repos = "https://ctu-bern.r-universe.dev/")
+
+# from github
+remotes::install_github("CTU-Bern/redcaptools")</code></pre>
+</details>
+</section>
+<section id="selcorr---post-selection-inference-for-generalized-linear-models" class="level2">
+<h2 class="anchored" data-anchor-id="selcorr---post-selection-inference-for-generalized-linear-models"><code>selcorr</code> - post-selection inference for generalized linear models</h2>
+<p><img src="https://img.shields.io/badge/Language-R-red.svg" class="img-fluid"> <a href="https://cran.r-project.org/package=selcorr"><img src="https://www.r-pkg.org/badges/version/selcorr?color=green.png" class="img-fluid"></a></p>
+<p><code>selcorr</code> calculates (unconditional) post-selection confidence intervals and p-values for the coefficients of (generalized) linear models.</p>
+<details>
+<summary>
+Example
+</summary>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(selcorr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Paket 'selcorr' wurde unter R Version 4.2.2 erstellt</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## linear regression:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">selcorr</span>(<span class="fu">lm</span>(Fertility <span class="sc">~</span> ., swiss))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   Estimate    CI lower    CI upper            p
+(Intercept)      62.1013116 42.71786664 81.48475647 8.491981e-08
+Agriculture      -0.1546175 -0.29223032 -0.01700466 1.982091e-02
+Education        -0.9802638 -1.39242064 -0.56810702 1.824604e-05
+Catholic          0.1246664  0.04632685  0.20300594 1.658185e-03
+Infant.Mortality  1.0784422  0.30780496  1.84907938 4.254657e-03</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">## logistic regression:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>swiss.lr <span class="ot">=</span> <span class="fu">within</span>(swiss, Fertility <span class="ot">&lt;-</span> (Fertility <span class="sc">&gt;</span> <span class="dv">70</span>))</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">selcorr</span>(<span class="fu">glm</span>(Fertility <span class="sc">~</span> ., binomial, swiss.lr))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                    Estimate     CI lower    CI upper           p
+(Intercept)       4.82826099 -5.321339606 16.07753713 0.350491066
+Agriculture      -0.09614515 -0.226571990 -0.01216919 0.021955311
+Examination      -0.32116204 -0.648563464 -0.08452792 0.005626104
+Education        -0.12077779 -0.351284829  0.04391257 0.157299207
+Catholic          0.02077614 -0.007916228  0.05372390 0.157299207
+Infant.Mortality  0.29077911 -0.081067391  0.77887415 0.132575704</code></pre>
+</div>
+</div>
+<p>A parallel bootstrapping approach is also available.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sse)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">## defining the range of n and theta to be evaluated</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>psi <span class="ot">&lt;-</span> <span class="fu">powPar</span>(</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># SD values</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">theta =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">5</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="dv">1</span>),</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># sample sizes</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">5</span>, <span class="at">to =</span> <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">2</span>),</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># group means</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">muA =</span> <span class="dv">0</span>,</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">muB =</span> <span class="dv">20</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="do">## define a function to return the power in each scenario</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>powFun <span class="ot">&lt;-</span> <span class="cf">function</span>(psi){</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">power.t.test</span>(<span class="at">n =</span> <span class="fu">n</span>(psi)<span class="sc">/</span><span class="dv">2</span>,</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">delta =</span> <span class="fu">pp</span>(psi, <span class="st">"muA"</span>) <span class="sc">-</span> <span class="fu">pp</span>(psi, <span class="st">"muB"</span>),</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">sd =</span> <span class="fu">theta</span>(psi)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">$</span>power</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="do">## evaluate the power-function for all combinations of n and theta</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>calc <span class="ot">&lt;-</span> <span class="fu">powCalc</span>(psi, powFun)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(future.apply)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plan</span>(multisession)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>boot.repl <span class="ot">=</span> <span class="fu">future_replicate</span>(<span class="dv">8</span>, <span class="fu">selcorr</span>(<span class="fu">lm</span>(Fertility <span class="sc">~</span> ., swiss), <span class="at">boot.repl =</span> <span class="dv">1000</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="at">quiet =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>boot.repl, <span class="at">simplify =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plan</span>(sequential)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">selcorr</span>(<span class="fu">lm</span>(Fertility <span class="sc">~</span> ., swiss), <span class="at">boot.repl =</span> <span class="fu">do.call</span>(<span class="st">"rbind"</span>, boot.repl))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Assuming that a standard deviation of 12 is appropriate in this case, and we want a power of 90%, we can plot the power curve:</p>
+</details>
+<details>
+<summary>
+Installation
+</summary>
+<p><code>selcorr</code> can be installed in R from CRAN:</p>
+<pre><code># from CRAN (the stable version)
+install.packages("selcorr")</code></pre>
+</details>
+</section>
+<section id="sse---sample-size-estimation" class="level2">
+<h2 class="anchored" data-anchor-id="sse---sample-size-estimation"><code>sse</code> - sample size estimation</h2>
+<p><img src="https://img.shields.io/badge/Language-R-red.svg" class="img-fluid"> <a href="https://github.com/thofab/sse"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid"></a> <a href="http://r-forge.r-project.org/projects/power/"><img src="https://img.shields.io/badge/R%20forge-grey.svg" class="img-fluid"></a> <a href="https://cran.r-project.org/package=sse"><img src="https://www.r-pkg.org/badges/version/sse?color=green.png" class="img-fluid"></a></p>
+<p><code>sse</code> is another R package for sample size calculation that has been in use at CTU Basel for many years. It’s approach is very general, allowing a wide range of scenarios to be assessed rapidly. Where <code>presize</code> is rather for precision-based calculations, <code>sse</code> is rather for hypothesis testing, although it is general enough that it can be used for both frameworks.</p>
+<details>
+<summary>
+Example
+</summary>
+<p>We want to find the sample size for comparing two means. We are unsure of the standard deviation to expect, so we assess the sample size across a range of standard deviations. Assuming that a standard deviation of 12 is appropriate in this case, and we want a power of 90%, we can plot the power curve:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## choose one particular example at theta of 1 and power of 0.9</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>pow <span class="ot">&lt;-</span> <span class="fu">powEx</span>(calc, <span class="at">theta =</span> <span class="dv">12</span>, <span class="at">power =</span> <span class="fl">0.9</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="do">## drawing the power plot with 3 contour lines</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pow,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Standard Deviation"</span>,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Total Sample Size"</span>,</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.85</span>, <span class="fl">0.9</span>, <span class="fl">0.95</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sse)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="do">## defining the range of n and theta to be evaluated</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>psi <span class="ot">&lt;-</span> <span class="fu">powPar</span>(</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># SD values</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">theta =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">5</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="dv">1</span>),</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># sample sizes</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">5</span>, <span class="at">to =</span> <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">2</span>),</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># group means</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">muA =</span> <span class="dv">0</span>,</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">muB =</span> <span class="dv">20</span>)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="do">## define a function to return the power in each scenario</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>powFun <span class="ot">&lt;-</span> <span class="cf">function</span>(psi){</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">power.t.test</span>(<span class="at">n =</span> <span class="fu">n</span>(psi)<span class="sc">/</span><span class="dv">2</span>,</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">delta =</span> <span class="fu">pp</span>(psi, <span class="st">"muA"</span>) <span class="sc">-</span> <span class="fu">pp</span>(psi, <span class="st">"muB"</span>),</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">sd =</span> <span class="fu">theta</span>(psi)</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">$</span>power</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="do">## evaluate the power-function for all combinations of n and theta</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>calc <span class="ot">&lt;-</span> <span class="fu">powCalc</span>(psi, powFun)</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a><span class="do">## choose one particular example at theta of 1 and power of 0.9</span></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>pow <span class="ot">&lt;-</span> <span class="fu">powEx</span>(calc, <span class="at">theta =</span> <span class="dv">12</span>, <span class="at">power =</span> <span class="fl">0.9</span>)</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="do">## drawing the power plot with 3 contour lines</span></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pow,</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Standard Deviation"</span>,</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Total Sample Size"</span>,</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>     <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.85</span>, <span class="fl">0.9</span>, <span class="fl">0.95</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
-<p><img src="software_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+<p><img src="software_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </details>
@@ -409,15 +529,15 @@ Example
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load example dataset (note: this example is nonsensical and only for graphing purposes)</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>webuse stan3, clear</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># set data as survival data</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>stset t1, <span class="fu">failure</span>(died) <span class="fu">id</span>(id)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># label treatment arms </span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>label define posttran_l <span class="dv">0</span> <span class="st">"prior transplantation"</span> <span class="dv">1</span> <span class="st">"after transplantation"</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>label value posttran posttran_l</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># create landmark plot and table </span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>sts_graph_landmark, <span class="fu">at</span>(<span class="dv">200</span>) <span class="fu">by</span>(posttran) risktable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load example dataset (note: this example is nonsensical and only for graphing purposes)</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>webuse stan3, clear</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># set data as survival data</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>stset t1, <span class="fu">failure</span>(died) <span class="fu">id</span>(id)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># label treatment arms </span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>label define posttran_l <span class="dv">0</span> <span class="st">"prior transplantation"</span> <span class="dv">1</span> <span class="st">"after transplantation"</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>label value posttran posttran_l</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># create landmark plot and table </span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>sts_graph_landmark, <span class="fu">at</span>(<span class="dv">200</span>) <span class="fu">by</span>(posttran) risktable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p><img src="docs/sts_landmark_graph.png" class="img-fluid"></p>
@@ -444,23 +564,23 @@ Example
 <div>
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(secuTrialR)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># prepare path to example export</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>export_location <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"extdata"</span>, <span class="st">"sT_exports"</span>, <span class="st">"snames"</span>,</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"s_export_CSV-xls_CTU05_short_miss_en_utf8.zip"</span>,</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                               <span class="at">package =</span> <span class="st">"secuTrialR"</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># read all export data</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>sT_export <span class="ot">&lt;-</span> <span class="fu">read_secuTrial</span>(<span class="at">data_dir =</span> export_location)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">visit_structure</span>(sT_export))</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_recruitment</span>(sT_export)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(secuTrialR)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># prepare path to example export</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>export_location <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"extdata"</span>, <span class="st">"sT_exports"</span>, <span class="st">"snames"</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"s_export_CSV-xls_CTU05_short_miss_en_utf8.zip"</span>,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                               <span class="at">package =</span> <span class="st">"secuTrialR"</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># read all export data</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>sT_export <span class="ot">&lt;-</span> <span class="fu">read_secuTrial</span>(<span class="at">data_dir =</span> export_location)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">visit_structure</span>(sT_export))</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_recruitment</span>(sT_export)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><img src="software_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+<p><img src="software_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 66.7%;justify-content: center;">
-<p><img src="software_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid" width="672"></p>
+<p><img src="software_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
@@ -486,7 +606,7 @@ install.packages("secuTrialR", repos = "https://ctu-bern.r-universe.dev/")</code
 </section>
 <section id="other-software-developed-by-ctus" class="level1">
 <h1>Other software developed by CTUs</h1>
-<p>CTU’s sometimes also develop software without explicit funding from the SCTO platform.</p>
+<p>CTU’s sometimes also develop software without explicit funding from the SCTO platform. Those packages are listed below.</p>
 <section id="accrualplot---simple-creation-of-accrual-plots" class="level2">
 <h2 class="anchored" data-anchor-id="accrualplot---simple-creation-of-accrual-plots"><code>accrualPlot</code> - simple creation of accrual plots</h2>
 <p><img src="https://img.shields.io/badge/Language-R-red.svg" class="img-fluid"> <a href="https://github.com/CTU-Bern/accrualPlot"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid"></a> <a href="https://ctu-bern.github.io/accrualPlot/"><img src="https://img.shields.io/badge/Website-blue.svg" class="img-fluid"></a> <a href="https://cran.r-project.org/package=accrualPlot"><img src="https://www.r-pkg.org/badges/version/accrualPlot?color=green.png" class="img-fluid"></a></p>
@@ -499,41 +619,41 @@ Example
 <div>
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(accrualPlot)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(accrualdemo)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">accrual_create_df</span>(accrualdemo<span class="sc">$</span>date, <span class="at">by =</span> accrualdemo<span class="sc">$</span>site)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># cumulative recruitment</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df, <span class="at">which =</span> <span class="st">"cum"</span>, <span class="at">engine =</span> <span class="st">"ggplot2"</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># absolute recruitment (daily/weekly/monthly)</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df, <span class="at">which =</span> <span class="st">"abs"</span>, <span class="at">engine =</span> <span class="st">"ggplot2"</span>)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># predict end date</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df, <span class="at">which =</span> <span class="st">"pred"</span>, <span class="at">target =</span> <span class="dv">300</span>, <span class="at">engine =</span> <span class="st">"ggplot2"</span>)</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># summary table</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(<span class="fu">summary</span>(df)) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">column_labels.hidden =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(accrualPlot)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(accrualdemo)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">accrual_create_df</span>(accrualdemo<span class="sc">$</span>date, <span class="at">by =</span> accrualdemo<span class="sc">$</span>site)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># cumulative recruitment</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df, <span class="at">which =</span> <span class="st">"cum"</span>, <span class="at">engine =</span> <span class="st">"ggplot2"</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># absolute recruitment (daily/weekly/monthly)</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df, <span class="at">which =</span> <span class="st">"abs"</span>, <span class="at">engine =</span> <span class="st">"ggplot2"</span>)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co"># predict end date</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df, <span class="at">which =</span> <span class="st">"pred"</span>, <span class="at">target =</span> <span class="dv">300</span>, <span class="at">engine =</span> <span class="st">"ggplot2"</span>)</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co"># summary table</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(<span class="fu">summary</span>(df)) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">column_labels.hidden =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="software_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+<p><img src="software_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="software_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid" width="672"></p>
+<p><img src="software_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="software_files/figure-html/unnamed-chunk-6-3.png" class="img-fluid" width="672"></p>
+<p><img src="software_files/figure-html/unnamed-chunk-10-3.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 
-<div id="dhcqdvdnvk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="bizfcrirla" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#dhcqdvdnvk .gt_table {
+#bizfcrirla .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -558,7 +678,7 @@ Example
   border-left-color: #D3D3D3;
 }
 
-#dhcqdvdnvk .gt_heading {
+#bizfcrirla .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -570,7 +690,7 @@ Example
   border-right-color: #D3D3D3;
 }
 
-#dhcqdvdnvk .gt_title {
+#bizfcrirla .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -582,7 +702,7 @@ Example
   border-bottom-width: 0;
 }
 
-#dhcqdvdnvk .gt_subtitle {
+#bizfcrirla .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -594,13 +714,13 @@ Example
   border-top-width: 0;
 }
 
-#dhcqdvdnvk .gt_bottom_border {
+#bizfcrirla .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dhcqdvdnvk .gt_col_headings {
+#bizfcrirla .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -615,7 +735,7 @@ Example
   border-right-color: #D3D3D3;
 }
 
-#dhcqdvdnvk .gt_col_heading {
+#bizfcrirla .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -635,7 +755,7 @@ Example
   overflow-x: hidden;
 }
 
-#dhcqdvdnvk .gt_column_spanner_outer {
+#bizfcrirla .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -647,15 +767,15 @@ Example
   padding-right: 4px;
 }
 
-#dhcqdvdnvk .gt_column_spanner_outer:first-child {
+#bizfcrirla .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dhcqdvdnvk .gt_column_spanner_outer:last-child {
+#bizfcrirla .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dhcqdvdnvk .gt_column_spanner {
+#bizfcrirla .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -667,7 +787,7 @@ Example
   width: 100%;
 }
 
-#dhcqdvdnvk .gt_group_heading {
+#bizfcrirla .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -692,7 +812,7 @@ Example
   vertical-align: middle;
 }
 
-#dhcqdvdnvk .gt_empty_group_heading {
+#bizfcrirla .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -707,15 +827,15 @@ Example
   vertical-align: middle;
 }
 
-#dhcqdvdnvk .gt_from_md > :first-child {
+#bizfcrirla .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dhcqdvdnvk .gt_from_md > :last-child {
+#bizfcrirla .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dhcqdvdnvk .gt_row {
+#bizfcrirla .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -734,7 +854,7 @@ Example
   overflow-x: hidden;
 }
 
-#dhcqdvdnvk .gt_stub {
+#bizfcrirla .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -747,7 +867,7 @@ Example
   padding-right: 5px;
 }
 
-#dhcqdvdnvk .gt_stub_row_group {
+#bizfcrirla .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -761,11 +881,11 @@ Example
   vertical-align: top;
 }
 
-#dhcqdvdnvk .gt_row_group_first td {
+#bizfcrirla .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dhcqdvdnvk .gt_summary_row {
+#bizfcrirla .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -775,16 +895,16 @@ Example
   padding-right: 5px;
 }
 
-#dhcqdvdnvk .gt_first_summary_row {
+#bizfcrirla .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dhcqdvdnvk .gt_first_summary_row.thick {
+#bizfcrirla .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dhcqdvdnvk .gt_last_summary_row {
+#bizfcrirla .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -794,7 +914,7 @@ Example
   border-bottom-color: #D3D3D3;
 }
 
-#dhcqdvdnvk .gt_grand_summary_row {
+#bizfcrirla .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -804,7 +924,7 @@ Example
   padding-right: 5px;
 }
 
-#dhcqdvdnvk .gt_first_grand_summary_row {
+#bizfcrirla .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -814,11 +934,11 @@ Example
   border-top-color: #D3D3D3;
 }
 
-#dhcqdvdnvk .gt_striped {
+#bizfcrirla .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dhcqdvdnvk .gt_table_body {
+#bizfcrirla .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -827,7 +947,7 @@ Example
   border-bottom-color: #D3D3D3;
 }
 
-#dhcqdvdnvk .gt_footnotes {
+#bizfcrirla .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -841,7 +961,7 @@ Example
   border-right-color: #D3D3D3;
 }
 
-#dhcqdvdnvk .gt_footnote {
+#bizfcrirla .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -850,7 +970,7 @@ Example
   padding-right: 5px;
 }
 
-#dhcqdvdnvk .gt_sourcenotes {
+#bizfcrirla .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -864,7 +984,7 @@ Example
   border-right-color: #D3D3D3;
 }
 
-#dhcqdvdnvk .gt_sourcenote {
+#bizfcrirla .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -872,64 +992,64 @@ Example
   padding-right: 5px;
 }
 
-#dhcqdvdnvk .gt_left {
+#bizfcrirla .gt_left {
   text-align: left;
 }
 
-#dhcqdvdnvk .gt_center {
+#bizfcrirla .gt_center {
   text-align: center;
 }
 
-#dhcqdvdnvk .gt_right {
+#bizfcrirla .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dhcqdvdnvk .gt_font_normal {
+#bizfcrirla .gt_font_normal {
   font-weight: normal;
 }
 
-#dhcqdvdnvk .gt_font_bold {
+#bizfcrirla .gt_font_bold {
   font-weight: bold;
 }
 
-#dhcqdvdnvk .gt_font_italic {
+#bizfcrirla .gt_font_italic {
   font-style: italic;
 }
 
-#dhcqdvdnvk .gt_super {
+#bizfcrirla .gt_super {
   font-size: 65%;
 }
 
-#dhcqdvdnvk .gt_footnote_marks {
+#bizfcrirla .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#dhcqdvdnvk .gt_asterisk {
+#bizfcrirla .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dhcqdvdnvk .gt_indent_1 {
+#bizfcrirla .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dhcqdvdnvk .gt_indent_2 {
+#bizfcrirla .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dhcqdvdnvk .gt_indent_3 {
+#bizfcrirla .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dhcqdvdnvk .gt_indent_4 {
+#bizfcrirla .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dhcqdvdnvk .gt_indent_5 {
+#bizfcrirla .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1006,12 +1126,12 @@ github install CTU-Bern/btable</code></pre>
 Example
 </summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(btabler)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">""</span>, <span class="st">""</span>, <span class="st">"Row 1"</span>, <span class="st">"Row2"</span>),</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">out_t =</span> <span class="fu">c</span>(<span class="st">"Total"</span>, <span class="st">"mean (sd)"</span>, <span class="st">"t1"</span>, <span class="st">"t1"</span>),</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">out_1 =</span> <span class="fu">c</span>(<span class="st">"Group 1"</span>, <span class="st">"mean (sd)"</span>, <span class="st">"g11"</span>, <span class="st">"g12"</span>),</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">out_2 =</span> <span class="fu">c</span>(<span class="st">"Group 2"</span>, <span class="st">"mean (sd)"</span>, <span class="st">"g21"</span>, <span class="st">"g22"</span>))</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">btable</span>(df, <span class="at">nhead =</span> <span class="dv">2</span>, <span class="at">nfoot =</span> <span class="dv">0</span>, <span class="at">caption =</span> <span class="st">"Table1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(btabler)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">""</span>, <span class="st">""</span>, <span class="st">"Row 1"</span>, <span class="st">"Row2"</span>),</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">out_t =</span> <span class="fu">c</span>(<span class="st">"Total"</span>, <span class="st">"mean (sd)"</span>, <span class="st">"t1"</span>, <span class="st">"t1"</span>),</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">out_1 =</span> <span class="fu">c</span>(<span class="st">"Group 1"</span>, <span class="st">"mean (sd)"</span>, <span class="st">"g11"</span>, <span class="st">"g12"</span>),</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">out_2 =</span> <span class="fu">c</span>(<span class="st">"Group 2"</span>, <span class="st">"mean (sd)"</span>, <span class="st">"g21"</span>, <span class="st">"g22"</span>))</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="fu">btable</span>(df, <span class="at">nhead =</span> <span class="dv">2</span>, <span class="at">nfoot =</span> <span class="dv">0</span>, <span class="at">caption =</span> <span class="st">"Table1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Which will look like this in after LaTeX has created your PDF:</p>
 <p><img src="docs/btabler_basic.png" class="img-fluid"></p>
@@ -1029,8 +1149,8 @@ install.packages("btabler", repos = "https://ctu-bern.r-universe.dev/")</code></
 <h2 class="anchored" data-anchor-id="hsar---create-reproducible-hospital-service-areas-in-r"><code>HSAr</code> - create reproducible hospital service areas in R</h2>
 <p><img src="https://img.shields.io/badge/Language-R-red.svg" class="img-fluid"> <a href="https://github.com/aghaynes/HSAr"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid"></a> <a href="https://doi.org/10.1111/1475-6773.13275"><img src="https://img.shields.io/badge/Health%20Serv%20Res-10.1111/1475--6773.13275-apple.svg" class="img-fluid"></a> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7240760/"><img src="https://img.shields.io/badge/PubMed-PMC7240760-apple.svg" class="img-fluid"></a></p>
 <p>Hospital service areas can be useful for hospital planning, but their main use is in small area research. They are traditionally made largely by hand, by assigning each location to the hospital where most residents go and then iteratively moving locations until two main criteria are fulfilled - a HSA should not have detached islands, and at least 50% of it’s hospitalizations should stay there. The iterative steps are largely manual subjective work. As such the reproducibility of HSA creation is poor.</p>
-<p>`HSAr` provides an automated algorithm for creating HSAs by starting at the hospital and building the HSA around it until all regions in the provided shapefile are assigned to a HSA.</p>
-<p>`HSAr` was developed as part of national research programme 74, smarter health care.</p>
+<p><code>HSAr</code> provides an automated algorithm for creating HSAs by starting at the hospital and building the HSA around it until all regions in the provided shapefile are assigned to a HSA.</p>
+<p><code>HSAr</code> was developed as part of national research programme 74, smarter health care.</p>
 <details>
 <summary>
 Example
@@ -1042,7 +1162,7 @@ Installation
 </summary>
 <p><code>HSAr</code> can be installed in R via the following method:</p>
 <pre><code># from CTU Bern's package universe (the development version)
-install.packages("btabler", repos = "https://ctu-bern.r-universe.dev/")</code></pre>
+install.packages("HSAr", repos = "https://ctu-bern.r-universe.dev/")</code></pre>
 </details>
 </section>
 <section id="kpitools---tools-to-assist-with-risk-based-management-kpis" class="level2">
@@ -1055,7 +1175,7 @@ Example
 </summary>
 <p>It could be that we believe that time of day might be an indicator of data fabrication because it’s not possible that participants are randomised at certain times of the day. The <code>fab_tod</code> function can help depict that..</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kpitools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kpitools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Lade nötiges Paket: dplyr</code></pre>
 </div>
@@ -1111,22 +1231,22 @@ Attache Paket: 'rlang'</code></pre>
 
     set_names</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> lubridate<span class="sc">::</span><span class="fu">ymd_h</span>(<span class="st">"2020-05-01 13"</span>) <span class="sc">+</span> <span class="dv">60</span><span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="dv">0</span>, <span class="dv">3</span>),</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">mean =</span> <span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="dv">56</span>, <span class="dv">20</span>),</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">40</span>, <span class="at">prob =</span> <span class="fu">c</span>(.<span class="dv">2</span>,.<span class="dv">25</span>,.<span class="dv">4</span>,.<span class="dv">4</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">kpi</span>(<span class="st">"mean"</span>, kpi_fn_mean, <span class="at">by =</span> <span class="st">"by"</span>) <span class="sc">%&gt;%</span> plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> lubridate<span class="sc">::</span><span class="fu">ymd_h</span>(<span class="st">"2020-05-01 13"</span>) <span class="sc">+</span> <span class="dv">60</span><span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="dv">0</span>, <span class="dv">3</span>),</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">mean =</span> <span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="dv">56</span>, <span class="dv">20</span>),</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">40</span>, <span class="at">prob =</span> <span class="fu">c</span>(.<span class="dv">2</span>,.<span class="dv">25</span>,.<span class="dv">4</span>,.<span class="dv">4</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">kpi</span>(<span class="st">"mean"</span>, kpi_fn_mean, <span class="at">by =</span> <span class="st">"by"</span>) <span class="sc">%&gt;%</span> plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$by</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="software_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+<p><img src="software_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">fab_tod</span>(<span class="st">"x"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">fab_tod</span>(<span class="st">"x"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="software_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid" width="672"></p>
+<p><img src="software_files/figure-html/unnamed-chunk-12-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </details>
@@ -1139,45 +1259,10 @@ Installation
 install.packages("kpitools", repos = "https://ctu-bern.r-universe.dev/")</code></pre>
 </details>
 </section>
-<section id="redcaptools---a-package-for-working-with-redcap-data-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="redcaptools---a-package-for-working-with-redcap-data-in-r"><code>redcaptools</code> - a package for working with REDCap data in R</h2>
-<p><img src="https://img.shields.io/badge/Language-R-red.svg" class="img-fluid"> <a href="https://github.com/CTU-Bern/redcaptools"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid"></a> <a href="https://ctu-bern.github.io/redcaptools/"><img src="https://img.shields.io/badge/Website-blue.svg" class="img-fluid"></a></p>
-<p>REDCap is a popular database for clinical research, used by many of the CTUs in Switzerland. One aggravation with REDCap data exports is that the data is in one file which can contain a lot of empty cells when more complicated database designs are used. <code>redcaptools</code> has tools to automatically pull the database apart into forms for easier use. Similar to <code>secuTrialR</code>, it also labels variables, and prepares date and factor variables. The function is primarily for interacting with REDCap via the Application Programming Interface (API), allowing easy scripted exports.</p>
-<details>
-<summary>
-Example
-</summary>
-<p>By supplying the API token generated by REDCap, together with the APIs URL, the <code>redcap_export_byform</code> function can be used to export all data from the database by form. Each form is returned as an element of a list.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(redcaptools)</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>token <span class="ot">&lt;-</span> <span class="st">"some-long-string-provided-by-redcap"</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://link.to.redcap/api/"</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">redcap_export_byform</span>(token, url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The ‘normal’ format can be exported via the <code>redcap_export_tbl</code> function:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>record_data <span class="ot">&lt;-</span> <span class="fu">redcap_export_tbl</span>(token, url, <span class="st">"record"</span>)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>meta <span class="ot">&lt;-</span> <span class="fu">redcap_export_tbl</span>(token, url, <span class="st">"metadata"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>This function can also be used to export various other API endpoints (e.g.&nbsp;various types of metadata etc, specific forms).</p>
-<p>The data can then be formatted by using the metadata and the <code>rc_prep</code> function</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>prepped <span class="ot">&lt;-</span> <span class="fu">rc_prep</span>(dat, meta)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</details>
-<details>
-<summary>
-Installation
-</summary>
-<p><code>redcaptools</code> can be installed in R via the following method:</p>
-<pre><code># from CTU Bern's package universe (the development version)
-install.packages("redcaptools", repos = "https://ctu-bern.r-universe.dev/")</code></pre>
-</details>
-</section>
 <section id="stata_secutrial---some-stata-code-to-do-data-import-and-preparation-of-secutrial-datasets" class="level2">
 <h2 class="anchored" data-anchor-id="stata_secutrial---some-stata-code-to-do-data-import-and-preparation-of-secutrial-datasets"><code>stata_secutrial</code> - some Stata code to do data import and preparation of secuTrial datasets</h2>
 <p><img src="https://img.shields.io/badge/Language-Stata-red.svg" class="img-fluid"> <a href="https://github.com/CTU-Bern/stata_secutrial"><img src="https://img.shields.io/badge/GitHub-silver.svg" class="img-fluid" data-fig-align="left"></a></p>
-<p>Similar to <code>secuTrialR</code> above, <code>stata_secutrial</code> provides Stata code to read and prepare secuTrial exports in Stata. It labels variables, formats date variables, add labels to categorical variables etc, saving each form as a <code>dta</code> file for your further use.</p>
+<p>Similar to <code>secuTrialR</code> above, <code>stata_secutrial</code> provides Stata code to read and prepare secuTrial exports in Stata. It labels variables, formats date variables, adds labels to categorical variables etc, saving each form as a <code>dta</code> file for your further use.</p>
 <details>
 <summary>
 Example
@@ -1190,7 +1275,7 @@ Example
 <summary>
 Installation
 </summary>
-<p>As <code>stata_secutrial</code> is just code rather than a package, you can copy the files from GitHub and use then in you project. Towards the top of the <a href="https://github.com/CTU-Bern/stata_secutrial">GitHub page</a> is a green code button. Click that and choose download ZIP. You can then unzip the files to your working directory.</p>
+<p>As <code>stata_secutrial</code> is just code rather than a package, you can copy the files from GitHub and use then in you project. Towards the top of the <a href="https://github.com/CTU-Bern/stata_secutrial">GitHub page</a> is a green <code>code</code> button. Click that and choose download ZIP. You can then unzip the files to your working directory.</p>
 </details>
 </section>
 <section id="swissasr---simplified-annual-safety-reports-with-r" class="level2">

@@ -161,7 +161,7 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">Home</a>
+    <a class="nav-link active" href="./index.html" aria-current="page">Home</a>
   </li>  
 </ul>
               <div class="quarto-toggle-container">
@@ -191,14 +191,24 @@ div.csl-indent {
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Home</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">About</a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">For clinicians</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">Guidance</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./DataSharing.html" class="sidebar-item-text sidebar-link">Data sharing</a>
@@ -209,38 +219,33 @@ div.csl-indent {
   <a href="./ReportingGuidelines.html" class="sidebar-item-text sidebar-link">Reporting guidelines</a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Vignettes</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vignettes.html" class="sidebar-item-text sidebar-link">Overview</a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./SampleSizeCalculation.html" class="sidebar-item-text sidebar-link active">Sample size calculation</a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">For programmers</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./baselinetables.html" class="sidebar-item-text sidebar-link">Make a baseline table</a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./software.html" class="sidebar-item-text sidebar-link">Software packages</a>
-  </div>
-</li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">About</a>
-  </div>
-</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./courses.html" class="sidebar-item-text sidebar-link">Courses</a>
@@ -248,7 +253,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./blog/index.html" class="sidebar-item-text sidebar-link">Blog</a>
+  <a href="./software.html" class="sidebar-item-text sidebar-link">Software packages</a>
   </div>
 </li>
     </ul>
@@ -295,6 +300,19 @@ div.csl-indent {
 
 </header>
 
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This page is under development. Changes should be expected.</p>
+</div>
+</div>
 <section id="background" class="level1">
 <h1>Background</h1>
 <p>In clinical research, one of the first technical hurdles to a project is the sample size calculation - how many participants would you need to include to be able to answer your research question? They are required by funding bodies, ethics and safety regulators. They can also be important to the sponsor - without a good sample size calculation, how can you tell if you will be able to achieve your aims?</p>
@@ -371,10 +389,10 @@ A is the correct answer. The defendant is innocent, so sentencing them to prison
 <section id="question-2-type-2-errors-are-controlled-by" class="level6">
 <h6 class="anchored" data-anchor-id="question-2-type-2-errors-are-controlled-by">Question 2: Type 2 errors are controlled by</h6>
 <ul>
-<li>A. <a href="#Question 2" data-toggle="popover" title="Incorrect. Type 2 errors are due to lack of precision - sample size">Test significance</a></li>
-<li>B. <a href="#Question 2" data-toggle="popover" title="Correct!">Larger sample size</a></li>
-<li>C. <a href="#Question 2" data-toggle="popover" title="Correct!">Power</a></li>
-<li>D. <a href="#Question 2" data-toggle="popover" title="Incorrect!">Smaller variation between participants</a></li>
+<li>A. Test significance</li>
+<li>B. Larger sample size</li>
+<li>C. Power</li>
+<li>D. Smaller variation between participants</li>
 </ul>
 <details>
 <summary>
