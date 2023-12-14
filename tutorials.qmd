@@ -4,7 +4,7 @@ bibliography: references.bib
 # format: pdf
 ---
 
-We have produced a range of tutorials on a variety of topics. They are targeted at different audiences depending on the content. 
+We have produced a range of tutorials on a variety of topics. They are targeted at different audiences depending on the content.
 
 This page provides a brief summary of the topics covered as well as an indication of the target audience.
 
@@ -25,3 +25,11 @@ Sample size calculations are also required for virtually every project. As stati
 ![](https://img.shields.io/badge/Target-Programmers-blue.svg) ![](https://img.shields.io/badge/Level-Intermediate-orange.svg)
 
 Survival curves are often depicted in an unadjusted state - i.e. the percentage surviving at a given timepoint, potentially split by a group. Where confounding occurs, unadjusted survival curves can be misleading. The inverse probability weighting method seeks to overcome this problem.
+
+## Others
+
+Many other tutorials are available. We notably recommend reading the ones published on the following websites:
+
+-   [Center for Reproducible Science of the university of Zürich](https://www.crs.uzh.ch/en/resources/CRS-Primers.html)
+
+-   [Epidemiology, Biostatistics and Prevention Institute of the university of Zürich](https://www.ebpi.uzh.ch/en/research/methodsexpertise.html) see "Resources" section at the end of the page.
